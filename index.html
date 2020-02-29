@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="showerStyles/styles.css">
+    <link rel="stylesheet" href="mystyles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+
+<body class="shower list">
+    <header class="caption">
+        <h1>Обтекай — Как жить с float в эпоху гридов?</h1>
+        <p>Захар Авсиевич, EffectiveSoft</p>
+    </header>
+
+    <!-- <section class="slide" id="cover">
+        <h2 class="shout">ОБТЕКАЙ!</h2>
+
+        <style>
+            #cover {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-bottom: 75px;
+            }
+
+            #cover h2 {
+                margin: 30px 0 0;
+                color: var(--color-grey);
+                text-align: center;
+                font-size: 150px;
+            }
+        </style>
+    </section> -->
+
+    <section class="slide full" id="cover">
+        <img src="pictures/main.jpg" alt="">
+    </section>
+
+    <section class="slide centered">
+        <svg viewBox="0 0 185 20" id="ic-logo" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M22 19.67L26.223.348h14.533l-.49 2.206h-11.85l-1.324 6.012h11.544l-.472 2.207H26.621l-1.468 6.725h12.685l-.471 2.19H22v-.018zm18.792 0l2.646-12.146h-2.23l.4-1.842h2.228l.435-1.998c.218-.99.453-1.703.689-2.155.235-.434.616-.8 1.141-1.095C46.627.156 47.351 0 48.258 0c.634 0 1.54.122 2.754.382l-.453 2.085c-.851-.208-1.54-.312-2.12-.312-.49 0-.852.121-1.105.347-.254.226-.472.782-.653 1.65l-.326 1.495h2.773l-.417 1.877h-2.773L43.275 19.67h-2.483zm7.81 0l2.646-12.146h-2.23l.4-1.842h2.229l.434-1.998c.218-.99.453-1.703.689-2.155.236-.434.616-.8 1.142-1.095C54.437.156 55.162 0 56.068 0c.634 0 1.54.122 2.755.382l-.454 2.085c-.851-.208-1.54-.312-2.12-.312-.489 0-.851.121-1.105.347-.254.226-.471.782-.652 1.65l-.327 1.495h2.773l-.399 1.842h-2.772L51.12 19.635h-2.519v.035zm18.194-4.761l2.428.243c-.344 1.147-1.142 2.242-2.392 3.284-1.25 1.043-2.736 1.547-4.476 1.547a6.338 6.338 0 0 1-2.972-.713 4.88 4.88 0 0 1-2.066-2.085c-.47-.92-.706-1.946-.706-3.128 0-1.529.362-3.006 1.105-4.448.743-1.442 1.685-2.502 2.863-3.197a7.36 7.36 0 0 1 3.806-1.043c1.74 0 3.135.522 4.168 1.564 1.032 1.043 1.558 2.45 1.558 4.24 0 .695-.054 1.39-.2 2.102H59.168a5.727 5.727 0 0 0-.055.73c0 1.303.308 2.311.943 3.006.634.695 1.395 1.043 2.301 1.043.852 0 1.685-.278 2.519-.8.834-.556 1.468-1.337 1.92-2.345zm-7.23-3.458h8.19c.018-.243.018-.417.018-.521 0-1.2-.308-2.12-.942-2.746-.616-.643-1.431-.956-2.41-.956-1.051 0-2.03.348-2.9 1.06-.87.678-1.522 1.738-1.957 3.163zm22.252 3.11l2.483.244c-.616 1.755-1.504 3.04-2.664 3.892-1.142.851-2.464 1.268-3.914 1.268-1.577 0-2.863-.486-3.86-1.477-.978-.99-1.486-2.363-1.486-4.118 0-1.529.308-3.023.942-4.5.635-1.477 1.54-2.59 2.719-3.371 1.178-.765 2.518-1.165 4.04-1.165 1.559 0 2.81.435 3.715 1.269.925.851 1.378 1.963 1.378 3.37l-2.447.157c-.018-.886-.272-1.58-.797-2.085-.526-.504-1.232-.747-2.084-.747-.997 0-1.866.295-2.591.904-.725.608-1.305 1.529-1.722 2.762-.417 1.234-.616 2.416-.616 3.563 0 1.198.272 2.085.834 2.693.543.59 1.232.903 2.03.903.815 0 1.576-.295 2.319-.886.707-.573 1.286-1.46 1.721-2.676zm9.804 3.163l-.417 1.946a6.843 6.843 0 0 1-1.74.226c-.978 0-1.776-.226-2.355-.695-.435-.348-.67-.834-.67-1.443 0-.312.108-1.007.362-2.12l1.775-8.132H86.62l.399-1.841h1.957l.761-3.44L92.582.572l-1.105 5.092h2.446l-.417 1.841h-2.428l-1.685 7.733c-.218.973-.308 1.564-.308 1.755 0 .278.09.486.254.643.163.156.453.226.833.226a5.463 5.463 0 0 0 1.45-.14zM97.167 3.04l.598-2.71h2.464l-.598 2.71h-2.464zm-3.642 16.63l3.044-13.988h2.483L96.007 19.67h-2.483zm10.039 0l-2.392-13.988h2.41l1.25 7.715c.127.834.308 2.224.508 4.118a45.907 45.907 0 0 1 1.83-3.406l4.874-8.427h2.628l-8.354 13.988h-2.754zm21.111-4.761l2.428.243c-.344 1.147-1.142 2.242-2.392 3.284-1.25 1.043-2.736 1.547-4.476 1.547a6.34 6.34 0 0 1-2.972-.713 4.885 4.885 0 0 1-2.066-2.085c-.471-.92-.706-1.946-.706-3.128 0-1.529.362-3.006 1.105-4.448.743-1.442 1.685-2.502 2.863-3.197a7.363 7.363 0 0 1 3.806-1.043c1.739 0 3.135.522 4.168 1.564 1.033 1.043 1.558 2.45 1.558 4.24 0 .695-.054 1.39-.199 2.102h-10.746a5.795 5.795 0 0 0-.055.73c0 1.303.309 2.311.943 3.006.634.695 1.395 1.043 2.301 1.043.852 0 1.685-.278 2.519-.8.815-.556 1.468-1.337 1.921-2.345zm-7.231-3.458h8.191c.018-.243.018-.417.018-.521 0-1.2-.308-2.12-.942-2.746-.616-.643-1.431-.956-2.41-.956-1.051 0-2.03.348-2.899 1.06-.87.678-1.523 1.738-1.958 3.163zm13.011 1.946l3.951-.191c.054 1.199.272 2.016.634 2.433.598.695 1.722 1.025 3.353 1.025 1.359 0 2.337-.226 2.935-.695.598-.47.906-1.025.906-1.686 0-.573-.253-1.06-.743-1.46-.344-.295-1.304-.764-2.863-1.407-1.558-.66-2.7-1.199-3.425-1.633a4.836 4.836 0 0 1-1.703-1.686c-.417-.695-.616-1.511-.616-2.432 0-1.634.616-2.972 1.848-4.049C135.964.539 137.74.017 140.06.017c2.355 0 4.186.539 5.49 1.599 1.287 1.06 2.012 2.485 2.139 4.24l-3.969.174c-.109-.921-.453-1.634-1.051-2.12-.598-.487-1.468-.73-2.627-.73-1.142 0-1.957.191-2.447.573-.489.383-.743.869-.743 1.46 0 .556.218 1.008.671 1.373.453.364 1.431.868 2.972 1.511 2.319.956 3.787 1.738 4.421 2.329.943.886 1.414 2.015 1.414 3.388 0 1.703-.707 3.163-2.102 4.361-1.414 1.217-3.371 1.808-5.872 1.808-1.721 0-3.225-.278-4.494-.835-1.268-.555-2.174-1.337-2.682-2.328-.507-.99-.761-2.12-.725-3.423zm18.683.452c0-2.59.762-4.657 2.284-6.204 1.522-1.546 3.533-2.31 6.016-2.31 2.156 0 3.824.573 5.038 1.702 1.214 1.13 1.812 2.676 1.812 4.588 0 2.259-.761 4.222-2.265 5.873-1.504 1.65-3.534 2.485-6.071 2.485-1.377 0-2.591-.261-3.66-.8-1.052-.521-1.849-1.268-2.374-2.241a6.438 6.438 0 0 1-.78-3.093zm11.254-2.694c0-.903-.272-1.615-.816-2.154-.543-.539-1.25-.817-2.102-.817a3.62 3.62 0 0 0-2.265.765c-.652.504-1.178 1.233-1.54 2.207-.363.955-.544 1.841-.544 2.658 0 1.008.29 1.807.852 2.38.562.591 1.286.887 2.138.887 1.087 0 1.993-.452 2.718-1.338 1.033-1.269 1.559-2.798 1.559-4.588zm15.53-5.49l-.598 2.762h-2.791l-2.446 11.226h-3.951l2.446-11.226h-2.192l.598-2.762h2.192l.309-1.443c.253-1.181.489-1.963.724-2.38.308-.556.78-1.008 1.396-1.338.616-.33 1.431-.487 2.428-.487 1.214 0 2.483.209 3.824.626l-.762 2.71c-.942-.312-1.703-.469-2.301-.469-.453 0-.779.14-.997.417-.145.174-.29.643-.453 1.39l-.217.991h2.791v-.017zm.199 2.815l.598-2.815h1.921l.489-2.242 4.53-2.606-1.069 4.848H185l-.598 2.815h-2.428l-1.268 5.855c-.236 1.06-.345 1.668-.345 1.825 0 .295.091.504.29.677.199.157.544.244 1.051.244.181 0 .616-.035 1.305-.087l-.616 2.815c-.671.139-1.377.191-2.084.191-1.395 0-2.41-.26-3.044-.765-.635-.52-.943-1.233-.943-2.137 0-.434.163-1.425.508-2.971l1.214-5.63h-1.921V8.48zM20.768 1.112a.924.924 0 0 1-.904.736H5.149A.924.924 0 0 1 5.15 0h14.715a.924.924 0 0 1 .904 1.112zm-.714 3.408a.924.924 0 0 1-.905.736H4.38a.924.924 0 0 1 0-1.848h14.77a.924.924 0 0 1 .905 1.112zm-.764 3.704a.924.924 0 0 1-.903.727H3.555a.924.924 0 1 1 0-1.848h14.832c.59 0 1.028.545.902 1.12zm-.757 3.668a.924.924 0 0 1-.905.736H2.657a.924.924 0 1 1 0-1.848h14.971a.924.924 0 0 1 .905 1.112zm-.77 3.66a.924.924 0 0 1-.904.735H1.887a.924.924 0 1 1 0-1.847H16.86a.924.924 0 0 1 .904 1.112zm-.751 3.713a.924.924 0 0 1-.904.735H1.136a.924.924 0 1 1 0-1.848h14.972a.924.924 0 0 1 .904 1.113z">
+            </path>
+        </svg>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/float-form.png" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/heard.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Обтекание изображений текстом</h2>
+        <img src="pictures/css1.png" alt="" class="fl-left" width="40%"
+            style="margin-right: 2em; margin-bottom: 2em; border: 3px solid tomato;">
+        <p>Свойство <i>float</i> появилось в спецификации Cascading Style Sheets, level 1, ставшей рекомендацией 17
+            декабря 1996 года. <br> Это очень старое свойство, которое остаётся незаменимым и по сей день.</p>
+        <p class="copyright"><a href="https://www.w3.org/TR/CSS1/#float">Cascading Style Sheets, level 1</a></p>
+    </section>
+    <!-- <section class="slide">
+        <img src="pictures/ppap-1.jpg" alt="Гриды - IE">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/mems/wild-sponge.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">float: left</h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/mems/rainbow.jpg" alt="">
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/float-form.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Статистика опроса</h2>
+    </section>
+
+    <section class="slide full">
+        <iframe src="http://fntb.ru/" frameborder="0"></iframe>
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/mail-ru.png" alt="">
+    </section> -->
+
+    <section class="slide">
+        <h2 class="shout shrink">
+            Создание раскладок
+        </h2>
+        <svg class="place" width="1024" height="576" viewBox="0 0 16 9">
+            <line x1="0" y1="0" x2="16" y2="9" stroke="#c00" stroke-width="0.6"></line>
+        </svg>
+    </section>
+
+    <section class="slide">
+        <h2>В СМЫСЛЕ?</h2>
+        <img src="pictures/mems/wild-sponge.png" style="height: 90%;" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/float-position.png" alt="">
+    </section>
+
+    <section class="slide centered tac">
+        <h2 style="font-size: 5rem;">Есть инструменты для создания раскладок — float не один из них</h2>
+    </section>
+
+    <section class="slide full">
+        <video src="pictures/flex-vs-float.mp4" loop muted autoplay></video>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout">CSS Grid</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Holy Grail Layout</h2>
+        <div>
+            <img src="pictures/hg_example.jpg" alt="" width="80%">
+        </div>
+        <p class="copyright">
+            <a
+                href="https://en.wikipedia.org/wiki/Holy_grail_(web_design)">https://en.wikipedia.org/wiki/Holy_grail_(web_design)</a>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>На Float</h2>
+        <pre>
+            <code class="html" style="padding-left: 0; font-size: 1rem;">
+            &lt;div class=&quot;header&quot;&gt;header&lt;/div&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;center&quot; class=&quot;column&quot;&gt;
+                    Lorem ipsum...
+                &lt;/div&gt;
+                &lt;div class=&quot;left&quot; class=&quot;column&quot;&gt;Left&lt;/div&gt;
+                &lt;div class=&quot;right&quot; class=&quot;column&quot;&gt;Right&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;        
+            </code>
+        </pre>
+        <p class="copyright">
+            <a href="https://alistapart.com/article/holygrail/">alistapart.com/article/holygrail</a>
+        </p>
+    </section>
+
+    <section class="slide" style="padding-top: 50px;">
+        <h2>На Float</h2>
+        <pre style="column-count: 2; font-size: 0.9rem;">
+                <code>.container { </code>
+                <code>  padding-left: 300px; </code>
+                <code>  padding-right: 250px; </code>
+                <code>}</code>
+                <code>.container .column { </code>
+                <code>  position: relative; </code>
+                <code>  float: left; </code>
+                <code>  height: 0; </code>
+                <code>} </code>
+                <code>.footer {</code>
+                <code>  clear: both; </code>
+                <code>} </code>
+                <code>.center { </code>
+                <code>  width: 100%; </code>
+                <code>} </code>
+                <code>.left {</code>
+                <code>  width: 300px;</code>
+                <code>  right: 300px;</code>
+                <code>  margin-left: -100%;</code>
+                <code>} </code>
+                <code>.right {</code>
+                <code>  width: 250px;</code>
+                <code>  margin-right: -250px;</code>
+                <code>} </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>На Flex</h2>
+        <pre>
+            <code class="html" style="font-size: 1.1rem;">
+    &lt;div class=&quot;header&quot;&gt;header&lt;/div&gt;
+    &lt;div class=&quot;center&quot; class=&quot;column&quot;&gt;
+        Lorem ipsum...
+    &lt;/div&gt;
+    &lt;div class=&quot;left&quot; class=&quot;column&quot;&gt;Left&lt;/div&gt;
+    &lt;div class=&quot;right&quot; class=&quot;column&quot;&gt;Right&lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide" style="padding-top: 50px;">
+        <h2>На Flex</h2>
+        <pre style="column-count: 2; font-size: 0.9rem;">
+                <pre><code class="language-css">
+body { 
+display: flex; 
+flex-wrap: wrap; 
+}
+.header { 
+flex: 0 0 100%; 
+}
+.footer { 
+flex: 0 0 100%; 
+order: 4; 
+} 
+<br>
+.center {
+flex: 999 999 500px; 
+order: 2;
+} 
+.left { 
+flex: 1 1 300px; 
+order: 1;
+} 
+.right {
+flex: 1 1 250px;
+order: 3;
+} </code></pre>
+        </pre>
+    </section>
+
+    <section class="slide" style="padding-top: 30px;">
+        <h2>На Grid</h2>
+        <pre style=" font-size: 0.9rem;">
+                    <pre><code class="language-css flex-code">
+<div class="flex-col">
+body { 
+  display: grid; 
+  min-height: 100vh; 
+  grid-template-rows: min-content auto min-content; 
+  grid-template-columns: 300px auto 250px; 
+  grid-template-areas: 
+    '🎩 🎩 🎩' 
+    '👈 ✏️ 👉'
+    '🦶 🦶 🦶'; 
+} 
+</div>
+<div class="flex-col" style="margin-left: 50px;">
+.header { grid-area: 🎩; }
+
+.center { grid-area: ✏️; }
+
+.left { grid-area: 👈; }
+
+.right { grid-area: 👉; }
+
+.footer { grid-area: 🦶; }
+</div></code></pre>
+        </pre>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Необходимость использования хаков</h2>
+    </section>
+
+    <section class="slide">
+        <!-- <img src="pictures/float--no-clearfix.png" alt=""> -->
+        <!-- WHAT WE NEED -->
+        <div class="what-we">
+            <div class="gallery">
+                <!-- <div class="picture">
+                    <img src="pictures/pic-3.jpeg"
+                        alt="">
+                </div>
+                <div class="picture">
+                    <img src="pictures/pic-2.jpeg"
+                        alt="">
+                </div>
+                <div class="picture">
+                    <img src="pictures/pic-1.jpeg"
+                        alt="">
+                </div> -->
+
+                <img src="pictures/pic-3.jpeg" alt="">
+                <img src="pictures/pic-2.jpeg" alt="">
+                <img src="pictures/pic-1.jpeg" alt="">
+                <div class="clearfix"></div>
+            </div>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos dicta unde distinctio eaque, odit mollitia
+                aspernatur? Repudiandae aperiam provident harum. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Optio dignissimos sint maiores ut dolorum eius laboriosam vero voluptas aliquid pariatur magnam
+                laudantium quis assumenda atque et tempore omnis, sapiente earum. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Temporibus, ducimus ex esse quis fugiat quia expedita possimus explicabo accusantium
+                quas itaque optio, id voluptates.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <pre style="font-size: 1.1rem;"><code class="language-html">
+    
+&lt;div class=&quot;gallery&quot;&gt;
+    &lt;img src=&quot;img-1&quot; alt=&quot;&quot;&gt;
+    &lt;img src=&quot;img-2&quot; alt=&quot;&quot;&gt;
+    &lt;img src=&quot;img-3&quot; alt=&quot;&quot;&gt;
+&lt;/div&gt;
+&lt;p&gt;Text...&lt;/p&gt;
+</code>
+</pre>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css flex-code" style="font-size: 0.9rem;">
+<div class="flex-col">
+.gallery {
+    padding: 15px;
+    border: 5px dashed tomato;
+}
+img {
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    margin: 5px;
+    border-radius: 15px;
+    height: 160px;
+}
+</div>
+<div class="flex-col">
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+</div>
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <!-- <img src="pictures/float--no-clearfix.png" alt=""> -->
+        <!-- WHAT WE GET -->
+        <div class="what-we">
+            <div class="gallery">
+                <img src="pictures/pic-3.jpeg" alt="">
+                <img src="pictures/pic-2.jpeg" alt="">
+                <img src="pictures/pic-1.jpeg" alt="">
+                <!-- <div class="clearfix"></div> -->
+            </div>
+
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos dicta unde distinctio eaque, odit mollitia
+                aspernatur? Repudiandae aperiam provident harum. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Optio dignissimos sint maiores ut dolorum eius laboriosam vero voluptas aliquid pariatur magnam
+                laudantium quis assumenda atque et tempore omnis, sapiente earum. Lorem ipsum dolor sit amet consectetur
+                adipisicing elit. Temporibus, ducimus ex esse quis fugiat quia expedita possimus explicabo accusantium
+                quas itaque optio, id voluptates.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Оригинальная версия clearfix-хака</h2>
+        <pre style="font-size: 1.1rem;">
+    <code class="language-css flex-code">
+    <div class="flex-col">
+.clearfix:after { 
+    visibility: hidden; 
+    display: block; 
+    font-size: 0; 
+    content: &quot; &quot;; 
+    clear: both; 
+    height: 0; 
+ } 
+</div>
+<div class="flex-col">
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/ 
+* html .clearfix { height: 1%; } 
+.clearfix { display: block; }
+</div>
+ </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Поняли, что на macOS не используют IE</h2>
+        <pre><code class="language-css flex-code" style="font-size: 1.1rem;">
+<div class="flex-col">
+.clearfix:after { 
+    visibility: hidden; 
+    display: block; 
+    font-size: 0; 
+    content: &quot; &quot;; 
+    clear: both; 
+    height: 0; 
+ } 
+</div>
+<div class="flex-col">
+* html .clearfix { zoom: 1; }
+*:first-child+html .clearfix { zoom: 1; }
+</div>
+</code></pre>
+
+    </section>
+
+    <section class="slide">
+        <h2>Замена clearfix на group</h2>
+        <pre><code class="language-css flex-code" style="font-size: 1.1rem;">
+    <div class="flex-col">
+.group:after { 
+    visibility: hidden; 
+    display: block; 
+    content: &quot;&quot;; 
+    clear: both; 
+    height: 0; 
+ } 
+</div>
+<div class="flex-col">
+* html .group { zoom: 1; }
+*:first-child+html .group { zoom: 1; }
+</div></code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>«micro» clearfix</h2>
+        <pre><code class="language-css flex-code" style="font-size: 1.1rem;">
+    <div class="flex-col">
+.group:before,
+.group:after {
+    content: &quot;&quot;;
+    display: table;
+ } 
+</div>
+<div class="flex-col">
+.group:after {
+    clear: both;
+}
+.group {
+    zoom: 1;
+}
+</div></code></pre>
+    </section>
+
+    <section class="slide">
+        <h2>Тот самый clearfix (group)</h2>
+        <pre>
+            <code>.group:after { </code>
+            <code>    content: ""; </code>
+            <code>    display: table; </code>
+            <code>    clear: both; </code>
+            <code>} </code>
+        </pre>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Сложно выравнивать элементы по вертикали</h2>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/vertical-align.png" alt="">
+        <p class="copyright"><a
+                href="https://codepen.io/zavsievich/pen/eYmYgVW">https://codepen.io/zavsievich/pen/eYmYgVW</a></p>
+    </section>
+
+
+    <section class="slide">
+        <pre>
+                <code class="language-html">
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;el el-1&quot;&gt;&lt;img src=&quot;img-1&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;el el-2&quot;&gt;&lt;img src=&quot;img-2&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;el el-3&quot;&gt;&lt;img src=&quot;img-3&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;
+                  </code>
+                </pre>
+    </section>
+
+    <section class="slide">
+        <pre>
+                <code class="language-css flex-code" style="font-size: 1.1rem">
+                    <div class="flex-col">
+.container {
+    position: relative;
+}
+.el {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+}
+</div>
+<div class="flex-col">
+.el-2 {
+    margin-left: calc(29% + 60px);
+}
+.el-3 {
+    margin-left: calc(58% + 90px);
+}</div></code></pre>
+    </section>
+
+    <section class="slide full">
+        <video src="pictures/shit.mp4" loop muted autoplay></video>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Проблема с расстановкой элементов в нужном порядке</h2>
+    </section>
+
+    <section class="slide">
+        <pre>
+            <code class="hljs html xml" style="padding-left: 0; font-size: 1.1rem;">
+              <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logo"</span>&gt;</span>Hi!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-4"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+            </code>
+            </pre>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/right-order.png" alt="">
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/left-order.png" alt="">
+    </section>
+
+    <section class="slide">
+        <pre>
+                <code class="hljs html xml" style="padding-left: 0; font-size: 1.1rem;">
+                  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"container"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"logo"</span>&gt;</span>Hi!<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"list"</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-4"</span>&gt;</span>4<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-3"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-2"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                      <span class="hljs-tag">&lt;<span class="hljs-name">li</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"item item-1"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                </code>
+                </pre>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/ok-order.png" alt="">
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Сложно работать с&nbsp;высотой элементов</h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/float-diif-height.png" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/height-fixed.png" alt="">
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Непредсказуемость поведения блоков при увеличении контента</h2>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/unpredictable.jpg" alt="">
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/unpredictable--crash.jpg" alt="">
+    </section>
+
+    <section class="slide centered tac">
+        <h2>Всё меньше разработчиков сможет поддерживать вёрстку, спозиционированную на&nbsp;флоатах</h2>
+    </section>
+
+    <!-- <section class="slide">
+        <ul>
+            <li><a href="https://www.verizon.com/about/">Verizon</a></li>
+            <li class="next"><a href="https://www.fedex.com/en-us/home.html">FedEx</a></li>
+            <li class="next"><a href="https://www8.hp.com/by/ru/home.html">HP</a></li>
+            <li class="next"><a href="https://www.symantec.com/">Symantec</a></li>
+            <li class="next"><a href="https://www.spotify.com/by-ru/why-not-available/">Spotify</a></li>
+        </ul>
+    </section> -->
+
+    <section class="slide">
+        <h2 class="shout">2014</h2>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout"><a href="https://www.freecodecamp.org/">freecodecamp</a></h2>
+    </section>
+
+    <!-- <section class="slide">
+        <h2 class="shout">350,000&nbsp;в месяц</h2>
+    </section> -->
+
+    <section class="slide">
+        <h2 class="shout">350,000</h2>
+    </section>
+
+    <!-- <section class="slide">
+        <h2>Статистика опроса</h2>
+        
+        <h3>Ссылка на канал сообщества</h3>
+    </section> -->
+
+    <!-- <section class="slide centered">
+        <ol>
+            <li>Есть инструменты для создания раскладок — float не один из них</li>
+            <li class="next">Необходимость использования хака clearfix</li>
+            <li class="next">Сложно выравнивать элементы по вертикали</li>
+            <li class="next">Сложно работать с высотой элементов</li>
+            <li class="next">Непредсказуемость поведения блоков при увеличении контента</li>
+            <li class="next red">Всё меньше разработчиков сможет поддерживать вёрстку, спозиционированную на флоатах
+            </li>
+        </ol>
+    </section> -->
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Так что, хороним float?</h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/actual-float.png" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/mems/OkayGuy.jpg" alt="Okay">
+    </section>
+
+    <!-- <section class="slide centered">
+        <h2>Спасибо за внимание!</h2>
+    </section> -->
+
+    <section class="slide">
+        <h2 class="shout shrink">Нет!</h2>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout shrink">float, ты&nbsp;зачем?</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout--mini">Обтекание изображений текстом!</h2>
+        <!-- <img src="pictures/css1.png" alt="" class="fl-left" width="40%" style="margin-right: 2em; margin-bottom: 2em;">
+        <p>Свойство <i>float</i> появилось в спецификации Cascading Style Sheets, level 1, ставшей рекомендацией 17
+            декабря 1996 года. <br> Это очень старое свойство, которое остаётся незаменимым и по сей день.</p>
+        <p class="copyright"><a href="https://www.w3.org/TR/CSS1/#float">Cascading Style Sheets, level 1</a></p> -->
+    </section>
+
+    <section class="slide">
+        <img src="pictures/float-float.png" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/float-position.png" alt="">
+    </section>
+    <!--
+         https://www.w3.org/TR/CSS1/ 
+         https://www.w3.org/TR/CSS1/#float
+    -->
+    <!-- Слишком скучно! Добавим немного магии -->
+
+    <section class="slide">
+        <h2 class="shout--mini">Возрождаем float!</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout--mini">Обтекаем фигуры любой формы</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink"><a href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes</a></h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/shapes-heard.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>shape-outside</h2>
+        <ul>
+            <li><mark>circle()</mark></li>
+            <li>ellipse()</li>
+            <li>polygon()</li>
+            <li>url()</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/yin-yang.png" alt="" class="circle y-y">
+        <p>CSS Shapes позволяют определять геометрические фигуры, вокруг которых может обтекать текст. Этими фигурами
+            могут быть круги, эллипсы, простые или сложные многоугольники и даже изображения и градиенты. В качестве
+            нескольких практических примеров дизайна с использованием Shapes можно привести текст, обтекающий вокруг
+            круглого изображения</p>
+    </section>
+
+    <section class="slide">
+        <h2>shape-outside</h2>
+        <ul>
+            <li>circle()</li>
+            <li><mark>ellipse()</mark></li>
+            <li>polygon()</li>
+            <li>url()</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <div class="ellipse"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis impedit libero esse odio excepturi fuga
+            est ut itaque a quod suscipit, rerum asperiores. Consequuntur voluptates illo rerum recusandae pariatur
+            asperiores, aspernatur, saepe ipsum error dolorem, quod inventore possimus modi deleniti tenetur et
+            officiis. Nemo ab in totam ratione sequi error, ea dolorum repudiandae omnis, eaque facere impedit fugiat.
+            Dolorum distinctio autem sequi enim quidem esse accusamus repudiandae voluptatum nobis, velit, molestiae.
+            Eaque maiores, harum. Saepe esse repellendus sint. Labore provident optio quis commodi quod quaerat quo
+            similique perspiciatis libero facere. Suscipit odit quas nemo, enim laudantium, provident repellendus natus
+            nostrum facilis expedita adipisci qui, harum minus quidem officia cupiditate repellat ut praesentium.
+            Possimus corporis, error atque ex adipisci, illum suscipit pariatur saepe impedit aliquam amet eos
+            reiciendis quidem hic, nisi. Sint nobis modi, nesciunt quasi placeat quia. Veniam inventore corrupti
+            quisquam illum debitis vitae accusamus nobis alias cum iste error magnam, cupiditate earum! Incidunt at
+            consequuntur, rem ipsa odio ipsum deleniti repudiandae blanditiis harum ut in, fugit officia rerum ad,
+            corporis dolore! Commodi repellendus esse quibusdam enim qui totam ipsum, consequuntur officia vel dolores,
+            quod corrupti eveniet maiores minus explicabo, sapiente ratione doloribus laboriosam impedit nesciunt a
+            obcaecati quam veritatis! Placeat, velit possimus delectus, atque voluptate iste alias illo, dolor odit ipsa
+            facere quibusdam? Non omnis aliquid eveniet fuga labore dolores, autem blanditiis, dolorem error ex enim
+            fugiat quisquam aut reprehenderit delectus, nihil accusamus eaque at odit natus accusantium sunt asperiores
+            unde? Tempora dolorem, ad quidem quis adipisci dolores tempore. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Officiis impedit libero esse odio excepturi fuga est ut itaque a quod suscipit, rerum
+            asperiores. Consequuntur voluptates illo rerum recusandae pariatur asperiores, aspernatur, saepe ipsum error
+            dolorem, quod inventore possimus modi deleniti tenetur et officiis. Nemo ab in totam ratione sequi error, ea
+            dolorum repudiandae omnis, eaque facere impedit fugiat. Dolorum distinctio autem sequi enim quidem esse
+            accusamus repudiandae voluptatum nobis, velit, molestiae. Eaque maiores, harum. Saepe esse repellendus sint.
+            Labore provident optio quis commodi quod quaerat quo similique perspiciatis libero facere. Suscipit odit
+            quas nemo, enim laudantium, provident repellendus natus nostrum facilis expedita adipisci qui, harum minus
+            quidem officia cupiditate repellat ut praesentium. Possimus corporis, error atque ex adipisci, illum
+            suscipit pariatur saepe impedit aliquam amet eos reiciendis quidem hic, nisi. Sint nobis modi, nesciunt
+            quasi placeat quia. Veniam inventore corrupti quisquam illum debitis vitae accusamus nobis alias cum iste
+            error magnam, cupiditate earum! Incidunt at consequuntur, rem ipsa odio ipsum deleniti repudiandae
+            blanditiis harum ut in, fugit officia rerum ad, corporis dolore! Commodi repellendus esse quibusdam enim qui
+            totam ipsum, consequuntur officia vel dolores, quod corrupti eveniet maiores minus explicabo, sapiente
+            ratione doloribus laboriosam impedit nesciunt a obcaecati quam veritatis! Placeat, velit possimus delectus,
+            atque voluptate iste alias illo, dolor odit ipsa facere quibusdam? Non omnis aliquid eveniet fuga labore
+            dolores, autem blanditiis, dolorem error ex enim fugiat quisquam aut reprehenderit delectus, nihil accusamus
+            eaque at odit natus accusantium sunt asperiores unde? Tempora dolorem, ad quidem quis adipisci dolores
+            temporeNon omnis aliquid eveniet fuga labore dolores, autem blanditiis, dolorem error ex enim fugiat
+            quisquam aut reprehenderit delectus, nihil accusamus eaque at odit natus accusantium sunt asperiores unde?
+            Tempora dolorem, ad quidem quis adipisci dolores temporeNon omnis aliquid eveniet fuga labore dolores, autem
+            blanditiis, dolorem error ex enim fugiat quisquam aut reprehenderit delectus, nihil accusamus eaque at odit
+            natus accusantium sunt asperiores unde? Tempora dolorem, ad quidem quis adipisci dolores temporeNon omnis
+            aliquid eveniet fuga labore dolores, autem blanditiis, dolorem error ex enim fugiat quisquam aut
+            reprehenderit delectus, nihil accusamus eaque at odit natus accusantium sunt asperiores unde? Tempora
+            dolorem, ad quidem quis adipisci dolores temporeNon omnis aliquid eveniet fuga labore dolores, autem
+            blanditiis, dolorem error ex enim fugiat quisquam aut reprehenderit delectus, nihil accusamus eaque at odit
+            natus accusantium sunt asperiores unde? Tempora dolorem, ad quidem quis adipisci dolores temporeNon omnis
+            aliquid eveniet fuga labore dolores, autem blanditiis, dolorem error ex enim fugiat quisquam aut
+            reprehenderit delectus, nihil accusamus eaque at odit natus accusantium sunt asperiores unde? Tempora
+            dolorem, ad quidem quis adipisci dolores tempore</p>
+        <p class="copyright"><a
+                href="https://css-tricks.com/almanac/properties/s/shape-outside/">css-tricks.com/almanac/properties/s/shape-outside/</a>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>shape-outside</h2>
+        <ul>
+            <li>circle()</li>
+            <li>ellipse()</li>
+            <li><mark>polygon()</mark></li>
+            <li>url()</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/apple-logo.svg" alt="" class="apple-polygon apple-logo">
+        <p style="font-size: 30px;line-height: 40px;letter-spacing: 0.053em;font-weight: 100;font-style: italic;">Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Dolorem, iusto
+            nemo hic at, assumenda sunt dicta tempora officia quisquam porro laudantium illo placeat. Exercitationem,
+            esse ipsum libero numquam sit quae asperiores nam fugiat explicabo rem pariatur aperiam eum, sapiente
+            voluptatum quaerat molestiae nisi corrupti mollitia? Ullam laboriosam illo eius voluptates culpa ab possimus
+            amet. Dignissimos dolore quo repellendus sunt minus.</p>
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/firefox-path.png" alt="">
+    </section>
+
+    <section class="slide " style="background-color: hsl(340, 50%, 35%);">
+        <img src="pictures/dance-girl.png" alt="">
+        <p class="copyright">
+            <a href="https://codepen.io/stacy/pen/aWKerN/">https://codepen.io/stacy/pen/aWKerN/</a>
+        </p>
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/magazine.png" alt="">
+        <p class="copyright">
+            <a href="https://codepen.io/mandymichael/pen/axZyoP">https://codepen.io/mandymichael/pen/axZyoP</a>
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>shape-outside</h2>
+        <ul>
+            <li>circle()</li>
+            <li>ellipse()</li>
+            <li>polygon()</li>
+            <li><mark>url()</mark></li>
+        </ul>
+    </section>
+
+    <section class="slide slide--building">
+        <img src="pictures/1.png" class="fl-right building-1" alt="" style="height: 91%;">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga alias nobis tenetur ducimus tempore. Sequi
+            libero soluta tenetur. Corrupti, iste doloribus ut amet recusandae rem qui praesentium nisi voluptates ab
+            accusamus illum quae labore voluptate? Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati,
+            error fugiat! Numquam, totam perspiciatis aliquam deserunt neque sed ratione pariatur dignissimos cupiditate
+            velit culpa cum. Quis totam quos impedit saepe temporibus doloribus repudiandae, maxime natus tenetur enim!
+            Repudiandae suscipit ratione ad tempora commodi quasi et fuga nostrum nulla perspiciatis illo repellat esse
+            tempore necessitatibus voluptas voluptates ab aspernatur vel, aperiam explicabo perferendis! Nobis dolore
+            earum exercitationem sit cumque illo iste, debitis facere, mollitia, officia animi sint corporis fuga quis
+            adipisci fugit. Cumque itaque cupiditate iusto commodi facere quis temporibus earum porro minima veniam vel,
+            eaque sed! Asperiores voluptate voluptatem iste. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Nam fugit quae eius consequuntur, earum minus corporis consectetur, aliquam enim, optio sequi delectus nulla
+            dolor sed. Voluptatum amet dolore labore similique nobis ipsa quod alias optio nihil quisquam quae
+            cupiditate veritatis quia quam, vel possimus reprehenderit omnis neque voluptate? Ullam, ex explicabo
+            reprehenderit accusamus modi expedita quasi nobis officia velit culpa, soluta quisquam repudiandae
+            consequatur tempore. Corporis iure quia, delectus officiis asperiores deserunt. Quisquam accusamus ex rerum
+            enim, reprehenderit dicta aspernatur, maxime sapiente ullam assumenda quam amet. Magnam eius, placeat et
+            doloremque voluptas eaque libero, tempora laborum ipsum, mollitia voluptates esse.</p>
+    </section>
+
+    <section class="slide slide--building">
+        <img src="pictures/2.png" class="fl-left building-2" alt="">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero dolorem aliquam nobis est exercitationem
+            accusantium sapiente laudantium unde esse distinctio? Eos doloremque laudantium quos quaerat voluptatibus
+            adipisci, consectetur soluta incidunt maiores voluptatum, cumque eligendi perspiciatis eius ex voluptates
+            earum recusandae. Aliquam, iusto? Ipsum debitis voluptatem, nihil officiis ab pariatur. Facilis quia
+            corporis nisi doloremque nostrum? Magni expedita consectetur maiores voluptatum. Perferendis, corporis.
+            Ratione harum earum repellendus deleniti, quo amet obcaecati reiciendis labore maxime laudantium sed minima.
+            Suscipit recusandae aperiam fugit esse id. Aut mollitia, id impedit repellendus ad tempore iure nihil. Iusto
+            eaque perspiciatis ratione veniam incidunt vel quibusdam voluptate error earum. Omnis vitae quae, voluptas
+            consequuntur laborum rem illum. Corrupti accusamus error modi, a aspernatur pariatur explicabo laborum
+            beatae quis voluptas, similique dignissimos assumenda hic consectetur fugit architecto, quam repudiandae
+            ullam? Accusamus, accusantium. Quo alias eveniet laboriosam fugit quas sed assumenda architecto nostrum
+            quibusdam culpa obcaecati praesentium, odit distinctio quis dolorem fugiat in voluptate dolor eligendi id?
+            Eligendi aspernatur explicabo voluptatibus quibusdam repellendus perspiciatis, culpa suscipit omnis
+            distinctio modi nemo laudantium, voluptates repudiandae voluptatem tempora accusantium magnam illum aliquid
+            blanditiis at non autem labore doloremque? Fuga, eaque? Molestias soluta, ipsa vel expedita cumque enim
+            earum velit illo quod, impedit a fugit quasi quas, perspiciatis reprehenderit sequi! Alias, non quasi
+            numquam rerum ullam tempora rem accusamus aperiam similique quis nobis illo corporis eveniet, voluptatum
+            distinctio reprehenderit, debitis nemo necessitatibus. Aperiam quis nemo eligendi illum, voluptatem tenetur,
+            natus quasi nostrum impedit omnis delectus! Omnis inventore, maxime aut libero dolor amet dignissimos, quasi
+            excepturi assumenda tenetur fuga modi incidunt sit esse illum dolorum. Cupiditate deleniti architecto,
+            tempore, suscipit eligendi dolor magnam reprehenderit eius fugiat sint asperiores rem placeat possimus
+            voluptate adipisci consectetur eaque, itaque nesciunt veritatis accusantium totam aliquid nulla! Suscipit
+            porro odio, obcaecati at ipsam repellat quae eius iure laudantium sapiente sunt inventore est quia assumenda
+            explicabo, nesciunt sint ipsa consequatur. Inventore voluptate, animi tempora nam excepturi itaque soluta
+            laboriosam suscipit facilis mollitia natus tenetur sunt blanditiis fugiat officia reprehenderit veritatis
+            culpa. Saepe dignissimos officiis blanditiis ut consequatur omnis voluptates, consequuntur, delectus,
+            laudantium maiores et quo! Blanditiis beatae porro assumenda id saepe vero quam earum illum deleniti officia
+            inventore aliquam corporis eligendi, omnis eveniet laudantium nobis necessitatibus aut, provident, possimus
+            quia in quis deserunt! Iste temporibus necessitatibus sit! Laborum veniam nemo corrupti, nam ullam
+            reprehenderit accusamus nostrum officia quibusdam aliquid odio nihil voluptatibus assumenda est!
+            Necessitatibus ipsam ab quae quam accusamus similique nobis delectus, alias consequuntur natus, possimus
+            repellendus provident cum maiores obcaecati eos labore quia aut quos doloremque optio quasi corrupti omnis.
+            Dolores aut voluptate temporibus nisi tempore quibusdam culpa, quidem alias vero in fugiat dolore,
+            voluptatem molestiae illum nam eos explicabo dicta obcaecati. Repudiandae, ut enim alias voluptatem quae
+            doloremque repellat delectus veniam facilis maiores consectetur quis commodi, deleniti eum incidunt. Eius
+            eveniet, tempore esse sunt, deserunt quod quaerat ducimus repellendus, dolor eos labore! Laborum minima
+            exercitationem a. Laudantium quaerat accusamus assumenda reiciendis non voluptatem quo voluptates voluptate.
+            Beatae quibusdam qui nihil aperiam pariatur reprehenderit odio minima nulla iste ea facere, corrupti illum
+            ducimus odit sint molestiae minus quas dolor? Iusto placeat earum fugiat perspiciatis velit soluta corporis
+            dolore incidunt, exercitationem sequi explicabo voluptatum deserunt. Distinctio consequatur perferendis
+            placeat.</p>
+    </section>
+
+    <section class="slide slide--building">
+        <img src="pictures/3.png" class="fl-left building-3" alt="">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa, fugiat. Expedita enim commodi aut quasi sequi
+            in corporis, nemo repudiandae ullam! Dolor libero corrupti tempora aspernatur. Fugiat reiciendis consectetur
+            iure corporis harum excepturi aut fuga, sequi facere provident optio pariatur porro, molestiae veniam
+            laboriosam blanditiis odio dignissimos enim aspernatur. Quasi deserunt, saepe atque asperiores non minima
+            maiores neque explicabo voluptate. Mollitia fuga rem voluptatum ipsa aliquid earum alias odio molestiae
+            voluptates voluptate temporibus labore placeat, natus expedita blanditiis officiis amet quia. Qui dolor nam
+            nostrum eveniet quas perferendis explicabo, natus ab minima adipisci laborum iste fuga laboriosam ipsum
+            excepturi perspiciatis. Aliquam est fugit deserunt facilis tempore adipisci accusamus facere fuga architecto
+            ratione assumenda autem, cupiditate qui molestiae saepe quae! Veritatis voluptatibus aperiam quia, labore
+            quisquam autem sunt maiores doloribus aut quis, voluptates sit repellat quaerat doloremque ea voluptatem
+            quas perspiciatis sed! Cumque, aspernatur qui provident, atque aut vitae assumenda tempore sunt voluptate
+            dolore quisquam sed ea? Incidunt expedita possimus ullam cum repudiandae itaque ab ipsa explicabo labore.
+            Aliquid labore corporis ex itaque doloremque natus recusandae ea. Distinctio aperiam voluptate voluptatum
+            sunt? Odit voluptate, aperiam reiciendis dignissimos quisquam totam corrupti blanditiis quaerat obcaecati
+            saepe commodi velit? Nisi placeat illo officiis, a ratione dolore maiores nesciunt ab temporibus corrupti
+            facilis quaerat eius neque magni culpa, alias repellat minus, pariatur suscipit voluptate? Illo recusandae
+            quidem minus enim. Quae et praesentium distinctio sunt, hic minima quidem nemo doloremque quo officiis eius
+            iure ipsam dignissimos nam officia blanditiis voluptatum voluptatem nisi, dicta eum? Mollitia, assumenda
+            excepturi totam, error quas officiis quibusdam optio, doloremque dolorum perferendis adipisci unde dicta.
+            Quas dolorum alias voluptates, modi cupiditate reprehenderit iure ipsam explicabo, reiciendis, praesentium
+            incidunt nobis eaque magnam ullam dolore quis accusantium a quidem fugiat. Architecto nesciunt recusandae
+            veritatis iste eum id excepturi consequatur aperiam, dolorem adipisci non, ipsam rem ut. Odit eveniet aut
+            porro ut! Deserunt consequatur in illo a non. Corporis reprehenderit earum quasi impedit veritatis minus
+            perferendis quisquam a labore recusandae amet, accusamus eos eaque quas vel omnis esse necessitatibus
+            adipisci nam ducimus optio soluta deleniti. Sit minima odit atque. Minima quae veritatis reprehenderit
+            aliquam?</p>
+    </section>
+
+    <section class="slide slide--building">
+        <img src="pictures/6.png" class="fl-left building-6" alt="">
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, aliquam esse ab, dolor possimus omnis
+            perspiciatis sed similique rerum dolorum, dignissimos et quae quo repudiandae qui unde. Quidem, sed eveniet,
+            in necessitatibus quaerat natus aspernatur, distinctio dolores ex facilis fugiat quos architecto repellendus
+            qui rerum! Eum voluptates eveniet porro sit dolorum, officiis deserunt sed commodi. Eum amet quae alias
+            harum nobis, similique, ipsum quam consequatur velit ab nemo. Magnam adipisci cum suscipit fugiat
+            praesentium quaerat ad unde velit consequatur molestiae soluta ducimus explicabo non nemo magni ex optio in,
+            iste illum possimus ab omnis molestias fugit distinctio. Maiores at cumque corrupti. Ipsam molestiae, error,
+            accusamus quas officiis earum ratione odio nisi itaque magni cupiditate sed expedita! Molestiae eveniet
+            totam voluptatibus fugiat quasi praesentium, mollitia cumque consectetur, optio fugit repellendus magnam
+            maiores commodi sapiente porro voluptatem ducimus? Aperiam quia reiciendis minima laudantium? Exercitationem
+            nihil rem eligendi delectus deserunt vitae iusto saepe accusantium illum expedita hic voluptatibus,
+            similique dolore vel sit iure obcaecati enim corporis minima minus temporibus itaque veritatis autem
+            placeat. Doloribus quos reprehenderit, iure, laudantium impedit tempora atque nam dolore facere, laboriosam
+            fuga dolorem sequi. Quam repudiandae quaerat facere error! Aliquid fugiat illo quidem nihil. Minus ipsa
+            recusandae ab assumenda. Ea eveniet ipsa sed? Dolorum hic voluptatum ex, laudantium impedit ab in quis quae
+            sapiente omnis placeat possimus similique earum esse perspiciatis! Tempore iusto minima unde? Ipsa
+            consequatur tempore a non? Error nam quae excepturi at dolores, voluptates distinctio eveniet necessitatibus
+            culpa deleniti officia facere recusandae repellendus dicta obcaecati, hic fugit? Totam, porro. Labore beatae
+            tempora quos sequi debitis aliquid excepturi amet porro vero, explicabo quis eligendi sint quidem officiis
+            voluptate earum. Aliquid labore aliquam commodi. Officiis velit quia vitae, illum similique omnis, dolores
+            accusantium rem, quaerat fuga ipsum. Unde odio reprehenderit laudantium voluptates temporibus, dolore
+            recusandae sequi eaque soluta quisquam quaerat impedit porro architecto culpa deleniti ea quidem, optio
+            accusamus ab fugiat atque quibusdam expedita vel. Soluta repellat harum voluptatum suscipit quo quae minima
+            reprehenderit quasi culpa?
+        </p>
+    </section>
+
+    <section class="slide slide--building">
+        <img src="pictures/5.png" class="fl-right building-5" alt="">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime facere id saepe praesentium, quisquam, esse
+            tempora culpa laudantium rem similique error nulla reprehenderit illo magni. Aut dolore in a magnam ad
+            repudiandae neque sequi error. Rem, minima accusamus reprehenderit eveniet ex autem nobis facilis maiores
+            commodi voluptates placeat tenetur exercitationem nemo maxime facere, laudantium quisquam repellat provident
+            sunt, soluta suscipit consectetur nihil ipsum explicabo! Necessitatibus voluptas quam natus incidunt
+            quibusdam, doloremque, odit saepe ea vel quod dolor libero ducimus quae eos adipisci alias in ipsam deleniti
+            fugit laborum, est aspernatur voluptates nulla expedita? Itaque reiciendis corrupti, enim sunt maxime
+            voluptate autem quae neque facere aut cupiditate corporis repellat officiis repudiandae omnis, quisquam,
+            praesentium debitis perferendis eos! Voluptatibus quia nostrum illo laborum nemo eveniet aliquam dolore
+            animi odit. Necessitatibus cumque placeat vel natus quam suscipit debitis unde accusantium repellat facere
+            earum expedita molestiae dolores, delectus, fuga adipisci libero commodi repellendus quisquam perspiciatis
+            repudiandae, velit cupiditate voluptatum. Est, eveniet dolorem repellendus atque iusto error soluta placeat
+            esse alias eum autem asperiores id quae consectetur sed eos consequatur quos eligendi adipisci, perferendis
+            voluptas et. Porro hic animi modi optio consequatur, temporibus eum neque sed. Consequuntur hic porro
+            corporis consequatur ipsam beatae esse error libero quae! Totam, hic sit? Perspiciatis omnis, repellat ipsa
+            non natus ab? Sit fuga minima impedit id saepe vitae sint, optio soluta deserunt illum provident velit hic
+            quia quam aliquam minus, expedita iste, aut at aperiam tempore error obcaecati rem. Tenetur, rerum deserunt
+            beatae voluptate natus saepe veritatis cupiditate voluptatibus quia mollitia recusandae at odio molestiae
+            alias tempora reprehenderit exercitationem est voluptatum impedit sapiente labore aspernatur eos iure
+            repudiandae? Quasi nam laboriosam nisi perferendis, atque ea, necessitatibus voluptatum incidunt nulla in
+            veritatis obcaecati, molestiae modi qui eveniet hic consectetur id consequatur consequuntur maiores
+            architecto quae! Ex at vitae molestiae officiis doloribus recusandae ea nihil cupiditate similique dolorem,
+            nostrum fugit vero magnam nulla ipsa totam quos dignissimos dolorum. Aperiam rerum voluptates nesciunt? Quis
+            consequuntur id, veniam aliquid at rem totam debitis iure reprehenderit ipsa tempore praesentium quisquam,
+            voluptates eveniet amet, architecto sequi doloribus earum maiores delectus labore quae illo sint explicabo!
+            Recusandae.</p>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">shape-margin</h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/apple-logo.svg" alt="" class="apple-polygon apple-logo apple-no-outside">
+        <p style="font-size: 30px;line-height: 40px;letter-spacing: 0.053em;font-weight: 100;font-style: italic;">Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Dolorem, iusto
+            nemo hic at, assumenda sunt dicta tempora officia quisquam porro laudantium illo placeat. Exercitationem,
+            esse ipsum libero numquam sit quae asperiores nam fugiat explicabo rem pariatur aperiam eum, sapiente
+            voluptatum quaerat molestiae nisi corrupti mollitia? Ullam laboriosam illo eius voluptates culpa ab possimus
+            amet. Dignissimos dolore quo repellendus sunt minus.</p>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/apple-logo.svg" alt="" class="apple-polygon apple-logo">
+        <p style="font-size: 30px;line-height: 40px;letter-spacing: 0.053em;font-weight: 100;font-style: italic;">Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Dolorem, iusto
+            nemo hic at, assumenda sunt dicta tempora officia quisquam porro laudantium illo placeat. Exercitationem,
+            esse ipsum libero numquam sit quae asperiores nam fugiat explicabo rem pariatur aperiam eum, sapiente
+            voluptatum quaerat molestiae nisi corrupti mollitia? Ullam laboriosam illo eius voluptates culpa ab possimus
+            amet. Dignissimos dolore quo repellendus sunt minus.</p>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">А в продакшн можно?</h2>
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/shape-outside.png" alt="">
+    </section>
+
+    <section class="slide full">
+            <img src="pictures/shape-margin-use.png" alt="">
+        </section>
+
+    <section class="slide">
+        <h2 class="shout"><a href="https://www.youtube.com/watch?v=coq1N7JW6sQ">Неквадратный веб</a></h2>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Ещё что-нибудь?</h2>
+    </section>
+
+    <sections class="slide centered">
+        <h2 class="shout--mini">Фикс для гридов в IE</h2>
+    </sections>
+
+    <section class="slide">
+        <pre><code class="language-css" style="font-size: 1.1rem;">
+.main {
+    display: grid;
+    grid-column-gap: 7rem;
+    grid-template-columns: 228px 1fr;
+}
+.aside {
+    grid-row: 1/3;
+}
+
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css flex-code" style="font-size: 1.1rem;">
+    <div class="flex-col">
+.main {
+    display: -ms-grid;
+    display: grid;
+    grid-column-gap: 7rem;
+    -ms-grid-columns: 228px 7rem 1fr;
+    grid-template-columns: 228px 1fr;
+    grid-template-columns: 228px 1fr;
+}
+</div>
+<div class="flex-col" style="
+margin-left: 50px;">
+.aside {
+    -ms-grid-row-span: 2;
+    -ms-grid-row: 1;
+    grid-row: 1/3;
+}
+</div>
+</code></pre>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/ppap-1.jpg" alt="Гриды - IE">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/ie-fuck.jpg" alt="">
+    </section>
+
+    <section class="slide">
+        <h2 class="shout" style="text-transform: uppercase;">Юля, помоги!</h2>
+    </section>
+
+    <section class="slide">
+        <img src="pictures/mems/vzhuh.jpg" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/ie-beauty.jpg" alt="">
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css" style="font-size: 1.1rem;">
+.main {
+    display: grid;
+    grid-column-gap: 7rem;
+    grid-template-columns: 228px 1fr;
+}
+.aside {
+    <mark>float: left;</mark>
+    grid-row: 1/3;
+}
+
+</code></pre>
+    </section>
+
+    <section class="slide full">
+        <iframe src="https://death-to-ie11.netlify.com" frameborder="0"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2>Добавление с админки</h2>
+        <img src="pictures/wysiwyg.png" alt="">
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout--mini">Поддержка старых браузеров</h2>
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/google-float.png" alt="">
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/amazon-float.png" alt="">
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/bootstrap-social.png" alt="">
+    </section>
+
+    <section class="slide">
+        <ul style="font-size: 3rem">
+            <li><a href="https://www.verizon.com/about/">Verizon</a></li>
+            <li class="next"><a href="https://www.fedex.com/en-us/home.html">FedEx</a></li>
+            <li class="next"><a href="https://www8.hp.com/by/ru/home.html">HP</a></li>
+            <li class="next"><a href="https://www.symantec.com/">Symantec</a></li>
+        </ul>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout"> <a href="https://www.princexml.com/">HTML -> PDF</a></h2>
+    </section>
+
+    <!-- <section class="slide">
+        <h2>А зачем ещё?</h2>
+        <ol style="line-height: 1.5;">
+            <li>При добавлении изображения через админку CMS нет никакой возможности расположить её, кроме как float
+            </li>
+            <li class="next">Хотфикс для гридов, если в IE всё поехало, а времени разбираться нет</li>
+            <li class="next">Расположение элементов (только для поддержки старых версий браузеров)</li>
+            <li class="next">Вёрстка страниц для последующего преобразования в PDF через программу Prince и ей подобные
+                (в некоторых версиях flex не поддерживается, приходится использовать таблицы, флоат инлайны)</li>
+        </ol>
+    </section> -->
+
+    <section class="slide centered" style="flex-direction: column;">
+        <h2>clearfix?</h2>
+        <h2 class="next" style="font-size: 5rem;">Забудьте!</h2>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout shrink">
+            <a href="https://www.w3.org/TR/css-display-3/#valdef-display-flow-root">
+                display: flow-root
+            </a>
+        </h2>
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/armrestling-1.jpg" alt="">
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout">Поток (flow)</h2>
+    </section>
+
+    <section class="slide">
+        <h2>«Нормальный» поток</h2>
+        <ul>
+            <li>Блочные (block)</li>
+            <li>Строчные (inline)</li>
+        </ul>
+        <p class="next">
+            Внешние значения свойства display
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>«Внутренние» значения</h2>
+        <ul>
+            <li>flex</li>
+            <li>grid</li>
+            <li>table</li>
+            <li class="next bold">flow</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>«Flow»</h2>
+        <pre>
+            <span class="bold">flow</span> !== flex
+            <br>
+            <span class="bold">flow</span> !== grid
+        </pre>
+    </section>
+
+    <section class="slide centered">
+        <h2>display: &lt;outside&gt; &lt;inside&gt;</h2>
+    </section>
+
+    <section class="slide centered">
+        <h2>inline-block = inline (outside) + block (inside)</h2>
+        <p class="copyright"><a
+                href="https://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html">https://css-live.ru/articles-css/udivitelnyj-i-neizvestnyj-inline-block.html</a>
+        </p>
+    </section>
+
+    <section class="slide centered">
+        <h2>inline-flex = inline (outside) + flex (inside)</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Блочный контекст форматирования</h2>
+        <ul>
+            <li>display: inline-block</li>
+            <li class="next">overflow: not visible</li>
+            <li class="next">display: flex | grid | table-cell</li>
+            <li class="next">position: absolute | fixed</li>
+            <li class="next">float: not none</li>
+            <li class="next bold">display: flow-root</li>
+        </ul>
+    </section>
+
+    <section class="slide centered" style="flex-direction: column; text-align: center;">
+        <h2>
+            <span style="text-decoration: line-through; font-size: 1.5rem;">inline-block</span>
+            <br>
+            <div class="next" style="margin-top: 1rem; font-size: 5rem;">inline flow-root</div>
+        </h2>
+    </section>
+
+    <section class="slide centered" style="flex-direction: column; align-items: flex-start;">
+        <h2>Default</h2>
+        <p>display: block flow-root</p>
+    </section>
+
+    <section class="slide centered">
+        <h2 class="shout">Поддержка</h2>
+    </section>
+
+    <section class="slide centered full">
+        <img src="pictures/flow-root.png" alt="">
+    </section>
+
+    <section class="slide">
+        <img src="pictures/flow-root-heard.png" alt="">
+    </section>
+
+    <section class="slide full">
+        <img src="pictures/supports-pic.png" alt="">
+    </section>
+
+    <section class="slide">
+        <pre><code class="language-css flex-code" style="font-size: 1.1rem;">
+    <div class="flex-col">
+.gallery::after { 
+    content: &quot;&quot;; 
+    display: table; 
+    clear: both; 
+} 
+</div>
+<div class="flex-col">
+@supports (display: flow-root) {
+  .gallery::after {
+    content: none;
+  }
+  .gallery {
+    display: flow-root;
+  }
+}</div></code></pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Спасибо!</h2>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/qr-code.png" alt="" width="50%">
+    </section>
+
+    <section class="slide">
+        <h2 class="shout"><a href="https://t.me/zavsievich">ZAVSIEVICH</a></h2>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки на сообщества</h2>
+        <ul style="font-size: 3rem">
+            <li><a href="https://t.me/css_ru">t.me/css_ru</a></li>
+            <li><a href="https://t.me/MinskCSS_MinskJS">t.me/MinskCSS_MinskJS</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки</h2>
+        <ul>
+            <li><a href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes Module Level 1</a></li>
+            <li><a href="https://www.w3.org/TR/css-display-3/">CSS Display Module Level 3</a></li>
+            <li><a href="https://www.youtube.com/watch?v=4Clyc38U-MA">Inner & Outer Values of the Display Property</a>
+            </li>
+            <li><a href="https://www.youtube.com/watch?v=XYQ-C-AUsy0">Неквадратный веб, Юлия Бухвалова</a></li>
+            <li><a href="https://css-live.ru/faq/displayflow-root-not-clearfix.html">display: flow-root — не clearfix,
+                    но что это и зачем?</a></li>
+            <li><a href="https://webformyself.com/vvedenie-v-css-shapes/">Введение в CSS Shapes</a></li>
+        </ul>
+    </section>
+
+
+
+    <!-- <section class="slide">
+        <h2>Shower key features</h2>
+        <ol>
+            <li>Built on HTML, CSS and JavaScript</li>
+            <li>Works in all modern browsers</li>
+            <li>Themes are separated from engine</li>
+            <li>Fully keyboard accessible</li>
+            <li>Printable to PDF</li>
+        </ol>
+        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Plain text on your slides</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
+            laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
+            reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Two columns if you like</h2>
+        <div class="columns two">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>All kind of lists</h2>
+        <ol>
+            <li>Simple lists are marked with bullets</li>
+            <li>Ordered lists begin with a number</li>
+            <li>You can even nest lists one inside another
+                <ul>
+                    <li>Or mix their types</li>
+                    <li>But do not go too far</li>
+                    <li>Otherwise audience will be bored</li>
+                </ul>
+            </li>
+            <li>Look, seven rows exactly!</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Serious citations</h2>
+        <figure>
+            <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia.</p>
+            </blockquote>
+            <figcaption>Marcus Tullius Cicero</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Code samples</h2>
+        <pre>
+            <code>&lt;!DOCTYPE html&gt;</code>
+            <code class="mark">&lt;html lang="en"&gt;</code>
+            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
+            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+            <code><mark>&lt;/head&gt;</mark></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Even tables</h2>
+        <table>
+            <tr>
+                <th scope="col">Locavore</th>
+                <th>Umami</th>
+                <th>Helvetica</th>
+                <th>Vegan</th>
+            </tr>
+            <tr>
+                <th scope="row">Fingerstache</th>
+                <td>Kale</td>
+                <td>Chips</td>
+                <td>Keytar</td>
+            </tr>
+            <tr>
+                <th scope="row">Sriracha</th>
+                <td>Gluten-free</td>
+                <td>Ennui</td>
+                <td>Keffiyeh</td>
+            </tr>
+            <tr>
+                <th scope="row">Thundercats</th>
+                <td>Jean</td>
+                <td>Shorts</td>
+                <td>Biodiesel</td>
+            </tr>
+            <tr>
+                <th scope="row">Terry</th>
+                <td>Richardson</td>
+                <td>Swag</td>
+                <td>Blog</td>
+            </tr>
+        </table>
+        <p>It’s good to have information organized.</p>
+    </section>
+
+    <section class="slide" id="picture">
+        <h2>Pictures</h2>
+        <figure>
+            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
+            <figcaption class="copyright right white">
+                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+            </figcaption>
+        </figure>
+        <style>
+            #picture h2 {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">You can even shout this way</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Inner navigation</h2>
+        <ol>
+            <li>Lets you reveal list items one by one</li>
+            <li class="next">To keep some key points</li>
+            <li class="next">In secret from audience</li>
+            <li class="next">But it will work only once</li>
+            <li class="next">Nobody wants to see the same joke twice</li>
+        </ol>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 class="shout">
+            <img src="pictures/logo.svg" alt="Shower logo">
+            <a href="https://github.com/shower/shower">See more on GitHub</a>
+        </h2>
+        <style>
+            #see-more h2 {
+                font-size: 100px
+            }
+
+            #see-more img {
+                width: 0.72em;
+                height: 0.72em;
+            }
+        </style>
+    </section> -->
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="highlight/index.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="showerJS/shower.min.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+/* Variables */
+* {
+    --c-blue: #005faf;
+}
+
+svg {
+    fill: currentColor;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.slide {
+    padding-bottom: 75px;
+}
+
+.dark {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.dark h2 {
+    color: white;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 75px;
+}
+
+.tac {
+    text-align: center;
+}
+
+.red {
+    color: red;
+}
+
+.fl-left {
+    float: left;
+}
+
+.fl-right {
+    float: right;
+}
+
+.slide .shout--mini {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    font-size: 100px;
+    transform: translateY(-50%);
+}
+
+.full {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#ic-logo {
+    color: var(--c-blue);
+    width: 100%;
+}
+
+.crossed {
+    position: relative;
+}
+
+.crossed::before {
+    content: "";
+    background-color: red;
+    display: block;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    transform: rotate(135deg);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.what-we {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: gray;
+}
+
+.what-we .gallery {
+    padding: 15px;
+    border: 5px dashed tomato;
+}
+
+.what-we .picture,
+.what-we img {
+    float: left;
+    width: 30%;
+    overflow: hidden;
+    margin: 5px;
+    border-radius: 15px;
+    height: 160px;
+}
+
+.what-we p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.what-we--get .clearfix::after {
+    content: none;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.place {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle {
+    float: left;
+    shape-outside: circle();
+    clip-path: circle();
+    /* shape-margin: 4em; */
+}
+
+.y-y {
+    margin: 50px 50px 50px 0;
+}
+
+.apple-logo {
+    width: 40%;
+    height: auto;
+    max-height: 100%;
+    margin: 15px;
+    margin-left: -50px;
+}
+
+.apple-polygon {
+    float: left;
+    /* height: 70%;
+  width: 50%; */
+    height: 70%;
+    shape-outside: polygon(
+        185px 38px,
+        180px 86px,
+        251px 134px,
+        143px 176px,
+        256px 216px,
+        214px 292px,
+        5px 274px
+    );
+    shape-margin: 20px;
+}
+
+.apple-no-outside {
+  shape-margin: 0;
+}
+
+.w-sponge {
+    shape-outside: url(pictures/mems/wild-sponge.png);
+}
+
+.ellipse {
+    shape-outside: ellipse(100px 200px at 50% 50%);
+    shape-margin: 30px;
+    clip-path: ellipse(100px 200px at 50% 50%);
+    width: 300px;
+    height: 500px;
+    float: left;
+    opacity: 0.2;
+    background-color: purple;
+}
+
+.slide--building {
+    background-color: #6298d5;
+}
+
+.slide--building p {
+    font-size: 0.8rem;
+}
+
+.slide--building img {
+    shape-margin: 15px;
+}
+
+.building-1 {
+    shape-outside: url(pictures/1.png);
+}
+
+.building-2 {
+    shape-outside: url(pictures/2.png);
+}
+
+.building-3 {
+    shape-outside: url(pictures/3.png);
+}
+
+.building-6 {
+    shape-outside: url(pictures/6.png);
+}
+
+.building-5 {
+    shape-outside: url(pictures/5.png);
+}
+
+.slide pre code:not(:only-child)::before {
+    content: none;
+}
+
+pre {
+    -moz-tab-size: 0;
+    tab-size: 0;
+}
+
+.flex-code {
+  display: flex !important;
+}
+
+.flex-col {
+  flex: 0 0 40%
+}
+
+.slide::after {
+  position: absolute;
+  top: 0;
+  left: 875px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  width: var(--ribbon-size);
+  height: calc(var(--ribbon-size) * 1.7);
+  /* background-image: url(ribbon.svg); */
+  background: var(--color-grey) !important;
+  background-size: cover;
+  color: #ffffff;
+  font-weight: 600;
+  counter-increment: slide;
+  content: counter(slide);
+  text-align: center;
+}
+
+
+.shout,
+.shout--mini {
+  font-size: 115px !important;
+}
+
+
+
+
+
+
+
+
+
+
+/* HIGHLIGHT */
+/**
+ * GitHub Gist Theme
+ * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+ */
+
+.hljs {
+    display: block;
+    background: white;
+    padding: 0.5em;
+    color: #333333;
+    overflow-x: auto;
+}
+
+.hljs-comment,
+.hljs-meta {
+    color: #969896;
+}
+
+.hljs-string,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+    color: #df5000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+    color: #a71d5d;
+}
+
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute {
+    color: #0086b3;
+}
+
+.hljs-section,
+.hljs-name {
+    color: #63a35c;
+}
+
+.hljs-tag {
+    color: #333333;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #795da3;
+}
+
+.hljs-addition {
+    color: #55a532;
+    background-color: #eaffea;
+}
+
+.hljs-deletion {
+    color: #bd2c00;
+    background-color: #ffecec;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}
