@@ -1,0 +1,40 @@
+.accordion {}
+
+.accordion__item {
+    margin-bottom: 1rem;
+    border: 2px solid tomato;
+    border-color: tomato;
+}
+
+.accordion__btn {
+    width: 100%;
+    text-align: left;
+    font: inherit;
+    /* background-color: ivory; */
+    text-transform: uppercase;
+    border: 2px solid transparent;
+    font-weight: 600;
+    padding: 0.5rem;
+    color: tomato;
+}
+
+.accordion__btn:focus {
+    outline: 0;
+    background-color: #3f3f3f;;
+    color: white;
+}
+
+.accordion__item.is-expand .accordion__btn {
+    border-bottom: 2px solid tomato;
+}
+
+.accordion__text {
+    display: none;
+    /* border: 2px solid tomato; */
+    border-top: 0;
+    padding: 0.5rem;
+}
+
+.accordion__item.is-expand .accordion__text {
+    display: block;
+}

@@ -1,0 +1,212 @@
+/* Variables */
+* {
+    --c-blue: #005faf;
+}
+
+svg {
+    fill: currentColor;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.slide {
+    padding-bottom: 75px;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 75px;
+}
+
+.tac {
+    text-align: center;
+}
+
+.ttu {
+    text-transform: uppercase;
+}
+
+.red {
+    color: red;
+}
+
+.slide .shout--mini {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 1;
+    font-size: 100px;
+    transform: translateY(-50%);
+}
+
+.shout,
+.shout--mini {
+  font-size: 115px !important;
+}
+
+.full {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.full iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#ic-logo {
+    color: var(--c-blue);
+    width: 100%;
+}
+
+.crossed {
+    position: relative;
+}
+
+.crossed::before {
+    content: "";
+    background-color: red;
+    display: block;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    transform: rotate(135deg);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.slide pre code:not(:only-child)::before {
+    content: none;
+}
+
+pre {
+    -moz-tab-size: 0;
+    tab-size: 0;
+}
+
+.flex-code {
+  display: flex !important;
+}
+
+.flex-col {
+  flex: 0 0 40%
+}
+
+.slide::after {
+  position: absolute;
+  top: 0;
+  left: 875px;
+  box-sizing: border-box;
+  padding-top: 15px;
+  width: var(--ribbon-size);
+  height: calc(var(--ribbon-size) * 1.7);
+  /* background-image: url(ribbon.svg); */
+  background: var(--color-grey) !important;
+  background-size: cover;
+  color: #ffffff;
+  font-weight: 600;
+  counter-increment: slide;
+  content: counter(slide);
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* HIGHLIGHT */
+/**
+ * GitHub Gist Theme
+ * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
+ */
+
+.hljs {
+    display: block;
+    background: white;
+    padding: 0.5em;
+    color: #333333;
+    overflow-x: auto;
+}
+
+.hljs-comment,
+.hljs-meta {
+    color: #969896;
+}
+
+.hljs-string,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-strong,
+.hljs-emphasis,
+.hljs-quote {
+    color: #df5000;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-type {
+    color: #a71d5d;
+}
+
+.hljs-literal,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-attribute {
+    color: #0086b3;
+}
+
+.hljs-section,
+.hljs-name {
+    color: #63a35c;
+}
+
+.hljs-tag {
+    color: #333333;
+}
+
+.hljs-title,
+.hljs-attr,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+    color: #795da3;
+}
+
+.hljs-addition {
+    color: #55a532;
+    background-color: #eaffea;
+}
+
+.hljs-deletion {
+    color: #bd2c00;
+    background-color: #ffecec;
+}
+
+.hljs-link {
+    text-decoration: underline;
+}

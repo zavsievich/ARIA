@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <title>Shower Presentation Engine</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="showerStyles/styles.css">
+    <link rel="stylesheet" href="mystyles.css">
+    <style>
+        .shower {
+            --slide-ratio: calc(16 / 9);
+        }
+    </style>
+</head>
+
+<body class="shower list">
+    <header class="caption">
+        <h1>Доступность веб-интерфейсов</h1>
+        <p>Захар Авсиевич, EffectiveSoft</p>
+    </header>
+
+    <section class="slide" style="letter-spacing: 0.05em;" id="cover">
+       <h2 class="shout ttu">веб-доступность</h2>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">A11Y</h2>
+    </section>
+
+    <section class="slide centered">
+        <dl>
+            <dt class="ttu">Веб-доступность</dt>
+            <dd>
+                это набор требований, методов и технологий разработки интерфейсов, которые делают их доступными для всех пользователей.
+            </dd>
+        </dl>
+    </section>
+
+    <!-- <section class="slide centered">
+        <svg viewBox="0 0 185 20" id="ic-logo" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M22 19.67L26.223.348h14.533l-.49 2.206h-11.85l-1.324 6.012h11.544l-.472 2.207H26.621l-1.468 6.725h12.685l-.471 2.19H22v-.018zm18.792 0l2.646-12.146h-2.23l.4-1.842h2.228l.435-1.998c.218-.99.453-1.703.689-2.155.235-.434.616-.8 1.141-1.095C46.627.156 47.351 0 48.258 0c.634 0 1.54.122 2.754.382l-.453 2.085c-.851-.208-1.54-.312-2.12-.312-.49 0-.852.121-1.105.347-.254.226-.472.782-.653 1.65l-.326 1.495h2.773l-.417 1.877h-2.773L43.275 19.67h-2.483zm7.81 0l2.646-12.146h-2.23l.4-1.842h2.229l.434-1.998c.218-.99.453-1.703.689-2.155.236-.434.616-.8 1.142-1.095C54.437.156 55.162 0 56.068 0c.634 0 1.54.122 2.755.382l-.454 2.085c-.851-.208-1.54-.312-2.12-.312-.489 0-.851.121-1.105.347-.254.226-.471.782-.652 1.65l-.327 1.495h2.773l-.399 1.842h-2.772L51.12 19.635h-2.519v.035zm18.194-4.761l2.428.243c-.344 1.147-1.142 2.242-2.392 3.284-1.25 1.043-2.736 1.547-4.476 1.547a6.338 6.338 0 0 1-2.972-.713 4.88 4.88 0 0 1-2.066-2.085c-.47-.92-.706-1.946-.706-3.128 0-1.529.362-3.006 1.105-4.448.743-1.442 1.685-2.502 2.863-3.197a7.36 7.36 0 0 1 3.806-1.043c1.74 0 3.135.522 4.168 1.564 1.032 1.043 1.558 2.45 1.558 4.24 0 .695-.054 1.39-.2 2.102H59.168a5.727 5.727 0 0 0-.055.73c0 1.303.308 2.311.943 3.006.634.695 1.395 1.043 2.301 1.043.852 0 1.685-.278 2.519-.8.834-.556 1.468-1.337 1.92-2.345zm-7.23-3.458h8.19c.018-.243.018-.417.018-.521 0-1.2-.308-2.12-.942-2.746-.616-.643-1.431-.956-2.41-.956-1.051 0-2.03.348-2.9 1.06-.87.678-1.522 1.738-1.957 3.163zm22.252 3.11l2.483.244c-.616 1.755-1.504 3.04-2.664 3.892-1.142.851-2.464 1.268-3.914 1.268-1.577 0-2.863-.486-3.86-1.477-.978-.99-1.486-2.363-1.486-4.118 0-1.529.308-3.023.942-4.5.635-1.477 1.54-2.59 2.719-3.371 1.178-.765 2.518-1.165 4.04-1.165 1.559 0 2.81.435 3.715 1.269.925.851 1.378 1.963 1.378 3.37l-2.447.157c-.018-.886-.272-1.58-.797-2.085-.526-.504-1.232-.747-2.084-.747-.997 0-1.866.295-2.591.904-.725.608-1.305 1.529-1.722 2.762-.417 1.234-.616 2.416-.616 3.563 0 1.198.272 2.085.834 2.693.543.59 1.232.903 2.03.903.815 0 1.576-.295 2.319-.886.707-.573 1.286-1.46 1.721-2.676zm9.804 3.163l-.417 1.946a6.843 6.843 0 0 1-1.74.226c-.978 0-1.776-.226-2.355-.695-.435-.348-.67-.834-.67-1.443 0-.312.108-1.007.362-2.12l1.775-8.132H86.62l.399-1.841h1.957l.761-3.44L92.582.572l-1.105 5.092h2.446l-.417 1.841h-2.428l-1.685 7.733c-.218.973-.308 1.564-.308 1.755 0 .278.09.486.254.643.163.156.453.226.833.226a5.463 5.463 0 0 0 1.45-.14zM97.167 3.04l.598-2.71h2.464l-.598 2.71h-2.464zm-3.642 16.63l3.044-13.988h2.483L96.007 19.67h-2.483zm10.039 0l-2.392-13.988h2.41l1.25 7.715c.127.834.308 2.224.508 4.118a45.907 45.907 0 0 1 1.83-3.406l4.874-8.427h2.628l-8.354 13.988h-2.754zm21.111-4.761l2.428.243c-.344 1.147-1.142 2.242-2.392 3.284-1.25 1.043-2.736 1.547-4.476 1.547a6.34 6.34 0 0 1-2.972-.713 4.885 4.885 0 0 1-2.066-2.085c-.471-.92-.706-1.946-.706-3.128 0-1.529.362-3.006 1.105-4.448.743-1.442 1.685-2.502 2.863-3.197a7.363 7.363 0 0 1 3.806-1.043c1.739 0 3.135.522 4.168 1.564 1.033 1.043 1.558 2.45 1.558 4.24 0 .695-.054 1.39-.199 2.102h-10.746a5.795 5.795 0 0 0-.055.73c0 1.303.309 2.311.943 3.006.634.695 1.395 1.043 2.301 1.043.852 0 1.685-.278 2.519-.8.815-.556 1.468-1.337 1.921-2.345zm-7.231-3.458h8.191c.018-.243.018-.417.018-.521 0-1.2-.308-2.12-.942-2.746-.616-.643-1.431-.956-2.41-.956-1.051 0-2.03.348-2.899 1.06-.87.678-1.523 1.738-1.958 3.163zm13.011 1.946l3.951-.191c.054 1.199.272 2.016.634 2.433.598.695 1.722 1.025 3.353 1.025 1.359 0 2.337-.226 2.935-.695.598-.47.906-1.025.906-1.686 0-.573-.253-1.06-.743-1.46-.344-.295-1.304-.764-2.863-1.407-1.558-.66-2.7-1.199-3.425-1.633a4.836 4.836 0 0 1-1.703-1.686c-.417-.695-.616-1.511-.616-2.432 0-1.634.616-2.972 1.848-4.049C135.964.539 137.74.017 140.06.017c2.355 0 4.186.539 5.49 1.599 1.287 1.06 2.012 2.485 2.139 4.24l-3.969.174c-.109-.921-.453-1.634-1.051-2.12-.598-.487-1.468-.73-2.627-.73-1.142 0-1.957.191-2.447.573-.489.383-.743.869-.743 1.46 0 .556.218 1.008.671 1.373.453.364 1.431.868 2.972 1.511 2.319.956 3.787 1.738 4.421 2.329.943.886 1.414 2.015 1.414 3.388 0 1.703-.707 3.163-2.102 4.361-1.414 1.217-3.371 1.808-5.872 1.808-1.721 0-3.225-.278-4.494-.835-1.268-.555-2.174-1.337-2.682-2.328-.507-.99-.761-2.12-.725-3.423zm18.683.452c0-2.59.762-4.657 2.284-6.204 1.522-1.546 3.533-2.31 6.016-2.31 2.156 0 3.824.573 5.038 1.702 1.214 1.13 1.812 2.676 1.812 4.588 0 2.259-.761 4.222-2.265 5.873-1.504 1.65-3.534 2.485-6.071 2.485-1.377 0-2.591-.261-3.66-.8-1.052-.521-1.849-1.268-2.374-2.241a6.438 6.438 0 0 1-.78-3.093zm11.254-2.694c0-.903-.272-1.615-.816-2.154-.543-.539-1.25-.817-2.102-.817a3.62 3.62 0 0 0-2.265.765c-.652.504-1.178 1.233-1.54 2.207-.363.955-.544 1.841-.544 2.658 0 1.008.29 1.807.852 2.38.562.591 1.286.887 2.138.887 1.087 0 1.993-.452 2.718-1.338 1.033-1.269 1.559-2.798 1.559-4.588zm15.53-5.49l-.598 2.762h-2.791l-2.446 11.226h-3.951l2.446-11.226h-2.192l.598-2.762h2.192l.309-1.443c.253-1.181.489-1.963.724-2.38.308-.556.78-1.008 1.396-1.338.616-.33 1.431-.487 2.428-.487 1.214 0 2.483.209 3.824.626l-.762 2.71c-.942-.312-1.703-.469-2.301-.469-.453 0-.779.14-.997.417-.145.174-.29.643-.453 1.39l-.217.991h2.791v-.017zm.199 2.815l.598-2.815h1.921l.489-2.242 4.53-2.606-1.069 4.848H185l-.598 2.815h-2.428l-1.268 5.855c-.236 1.06-.345 1.668-.345 1.825 0 .295.091.504.29.677.199.157.544.244 1.051.244.181 0 .616-.035 1.305-.087l-.616 2.815c-.671.139-1.377.191-2.084.191-1.395 0-2.41-.26-3.044-.765-.635-.52-.943-1.233-.943-2.137 0-.434.163-1.425.508-2.971l1.214-5.63h-1.921V8.48zM20.768 1.112a.924.924 0 0 1-.904.736H5.149A.924.924 0 0 1 5.15 0h14.715a.924.924 0 0 1 .904 1.112zm-.714 3.408a.924.924 0 0 1-.905.736H4.38a.924.924 0 0 1 0-1.848h14.77a.924.924 0 0 1 .905 1.112zm-.764 3.704a.924.924 0 0 1-.903.727H3.555a.924.924 0 1 1 0-1.848h14.832c.59 0 1.028.545.902 1.12zm-.757 3.668a.924.924 0 0 1-.905.736H2.657a.924.924 0 1 1 0-1.848h14.971a.924.924 0 0 1 .905 1.112zm-.77 3.66a.924.924 0 0 1-.904.735H1.887a.924.924 0 1 1 0-1.847H16.86a.924.924 0 0 1 .904 1.112zm-.751 3.713a.924.924 0 0 1-.904.735H1.136a.924.924 0 1 1 0-1.848h14.972a.924.924 0 0 1 .904 1.113z">
+            </path>
+        </svg>
+    </section> -->
+
+    <section class="slide centered">
+        <q>
+            Суть веба - в доступности знаний и информации для всего человечества. Когда разработчики создают барьеры, то
+            смысл веба теряется.
+        </q>
+    </section>
+
+    <section class="slide centered">
+        <q>
+            Доступность в Интернете означает, что люди с ограниченными возможностями могут пользоваться Интернетом.
+            Более конкретно, они могут: воспринимать, понимать, ориентироваться, взаимодействовать и вносить свой вклад
+            в Интернете.
+        </q>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">инвалиды</h2>
+        <svg class="place" width="1024" height="576" viewBox="0 0 16 9">
+            <line x1="0" y1="0" x2="16" y2="9" stroke="#c00" stroke-width="0.6"></line>
+        </svg>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">каждый из нас</h2>
+    </section>
+
+    <section class="slide">
+        <ul>
+            <li>Тёмная тема на палящем солнце</li>
+            <li class="next">Ссылка, вставленная JavaScript'ом</li>
+            <li class="next">Невозможность увеличения шрифта</li>
+            <li class="next">Нет подписи к неправильно введёному значению в форме</li>
+            <li class="next">Маленький размер шрифта</li>
+            <li class="next">Невозможность зумить сайт на смартфоне</li>
+            <li class="next">Невозможонсть перемещаться по элементам формы с помощью клавиши Tab</li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылка, вставленная JavaScript'ом</h2>
+        <img src="pictures/not-link-kfc.png" alt="" width="50%">
+    </section>
+
+    <section class="slide full">
+        <iframe src="https://sdelaysam.by/" frameborder="0"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2>Нет подписи к неправильно введёному значению в форме</h2>
+        <q>Красно-зелёным дальтонизмом страдают до 8 % мужчин и 0,5 % женщин североевропейского происхождения.</q>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/bad-form-not-submit.png" alt="" width="70%">
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">&#62; 1млрд (15%)</h2> 
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">110-190млн</h2>
+    </section>
+
+
+
+
+
+    <section class="slide full">
+        <iframe src="http://president.gov.by/special/ru/belarus_ru/" frameborder="0" ></iframe>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/a11y_pressure_statistics.png" alt="">
+    </section>
+
+    <!-- <section class="slide">
+        <h2>На Float</h2>
+        <pre>
+            <code class="html" style="padding-left: 0; font-size: 1rem;">
+            &lt;div class=&quot;header&quot;&gt;header&lt;/div&gt;
+            &lt;div class=&quot;container&quot;&gt;
+                &lt;div class=&quot;center&quot; class=&quot;column&quot;&gt;
+                    Lorem ipsum...
+                &lt;/div&gt;
+                &lt;div class=&quot;left&quot; class=&quot;column&quot;&gt;Left&lt;/div&gt;
+                &lt;div class=&quot;right&quot; class=&quot;column&quot;&gt;Right&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;        
+            </code>
+        </pre>
+        <p class="copyright">
+            <a href="https://alistapart.com/article/holygrail/">alistapart.com/article/holygrail</a>
+        </p>
+    </section> -->
+
+    <!-- <section class="slide" style="padding-top: 50px;">
+        <h2>На Float</h2>
+        <pre style="column-count: 2; font-size: 0.9rem;">
+                <code>.container { </code>
+                <code>  padding-left: 300px; </code>
+                <code>  padding-right: 250px; </code>
+                <code>}</code>
+                <code>.container .column { </code>
+                <code>  position: relative; </code>
+                <code>  float: left; </code>
+                <code>  height: 0; </code>
+                <code>} </code>
+                <code>.footer {</code>
+                <code>  clear: both; </code>
+                <code>} </code>
+                <code>.center { </code>
+                <code>  width: 100%; </code>
+                <code>} </code>
+                <code>.left {</code>
+                <code>  width: 300px;</code>
+                <code>  right: 300px;</code>
+                <code>  margin-left: -100%;</code>
+                <code>} </code>
+                <code>.right {</code>
+                <code>  width: 250px;</code>
+                <code>  margin-right: -250px;</code>
+                <code>} </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>На Flex</h2>
+        <pre>
+            <code class="html" style="font-size: 1.1rem;">
+    &lt;div class=&quot;header&quot;&gt;header&lt;/div&gt;
+    &lt;div class=&quot;center&quot; class=&quot;column&quot;&gt;
+        Lorem ipsum...
+    &lt;/div&gt;
+    &lt;div class=&quot;left&quot; class=&quot;column&quot;&gt;Left&lt;/div&gt;
+    &lt;div class=&quot;right&quot; class=&quot;column&quot;&gt;Right&lt;/div&gt;
+    &lt;div class=&quot;footer&quot;&gt;footer&lt;/div&gt;
+            </code>
+        </pre>
+    </section> -->
+
+    <section class="slide">
+        <h2 class="shout">Спасибо!</h2>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/qr-code.png" alt="" width="50%">
+    </section>
+
+    <section class="slide">
+        <h2 class="shout"><a href="https://t.me/zavsievich">ZAVSIEVICH</a></h2>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки на сообщества</h2>
+        <ul style="font-size: 3rem">
+            <li><a href="https://t.me/css_ru">t.me/css_ru</a></li>
+            <li><a href="https://t.me/MinskCSS_MinskJS">t.me/MinskCSS_MinskJS</a></li>
+        </ul>
+    </section>
+
+    <section class="slide">
+        <h2>Ссылки</h2>
+        <ul>
+            <li><a href="https://www.w3.org/TR/css-shapes-1/">CSS Shapes Module Level 1</a></li>
+            <li><a href="https://www.w3.org/TR/css-display-3/">CSS Display Module Level 3</a></li>
+            <li><a href="https://www.youtube.com/watch?v=4Clyc38U-MA">Inner & Outer Values of the Display Property</a>
+            </li>
+            <li><a href="https://www.youtube.com/watch?v=XYQ-C-AUsy0">Неквадратный веб, Юлия Бухвалова</a></li>
+            <li><a href="https://css-live.ru/faq/displayflow-root-not-clearfix.html">display: flow-root — не clearfix,
+                    но что это и зачем?</a></li>
+            <li><a href="https://webformyself.com/vvedenie-v-css-shapes/">Введение в CSS Shapes</a></li>
+        </ul>
+    </section>
+
+
+
+    <!-- <section class="slide">
+        <h2>Shower key features</h2>
+        <ol>
+            <li>Built on HTML, CSS and JavaScript</li>
+            <li>Works in all modern browsers</li>
+            <li>Themes are separated from engine</li>
+            <li>Fully keyboard accessible</li>
+            <li>Printable to PDF</li>
+        </ol>
+        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+    </section>
+
+    <section class="slide">
+        <h2>Plain text on your slides</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco
+            laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in
+            reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat
+            cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.
+        </p>
+    </section>
+
+    <section class="slide">
+        <h2>Two columns if you like</h2>
+        <div class="columns two">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>All kind of lists</h2>
+        <ol>
+            <li>Simple lists are marked with bullets</li>
+            <li>Ordered lists begin with a number</li>
+            <li>You can even nest lists one inside another
+                <ul>
+                    <li>Or mix their types</li>
+                    <li>But do not go too far</li>
+                    <li>Otherwise audience will be bored</li>
+                </ul>
+            </li>
+            <li>Look, seven rows exactly!</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Serious citations</h2>
+        <figure>
+            <blockquote>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                    culpa qui officia.</p>
+            </blockquote>
+            <figcaption>Marcus Tullius Cicero</figcaption>
+        </figure>
+    </section>
+
+    <section class="slide">
+        <h2>Code samples</h2>
+        <pre>
+            <code>&lt;!DOCTYPE html&gt;</code>
+            <code class="mark">&lt;html lang="en"&gt;</code>
+            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
+            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
+            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
+            <code><mark>&lt;/head&gt;</mark></code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Even tables</h2>
+        <table>
+            <tr>
+                <th scope="col">Locavore</th>
+                <th>Umami</th>
+                <th>Helvetica</th>
+                <th>Vegan</th>
+            </tr>
+            <tr>
+                <th scope="row">Fingerstache</th>
+                <td>Kale</td>
+                <td>Chips</td>
+                <td>Keytar</td>
+            </tr>
+            <tr>
+                <th scope="row">Sriracha</th>
+                <td>Gluten-free</td>
+                <td>Ennui</td>
+                <td>Keffiyeh</td>
+            </tr>
+            <tr>
+                <th scope="row">Thundercats</th>
+                <td>Jean</td>
+                <td>Shorts</td>
+                <td>Biodiesel</td>
+            </tr>
+            <tr>
+                <th scope="row">Terry</th>
+                <td>Richardson</td>
+                <td>Swag</td>
+                <td>Blog</td>
+            </tr>
+        </table>
+        <p>It’s good to have information organized.</p>
+    </section>
+
+    <section class="slide" id="picture">
+        <h2>Pictures</h2>
+        <figure>
+            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
+            <figcaption class="copyright right white">
+                <a href="http://fiftyfootshadows.net/">© John Carey</a>
+            </figcaption>
+        </figure>
+        <style>
+            #picture h2 {
+                color: white;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">You can even shout this way</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Inner navigation</h2>
+        <ol>
+            <li>Lets you reveal list items one by one</li>
+            <li class="next">To keep some key points</li>
+            <li class="next">In secret from audience</li>
+            <li class="next">But it will work only once</li>
+            <li class="next">Nobody wants to see the same joke twice</li>
+        </ol>
+    </section>
+
+    <section class="slide" id="see-more">
+        <h2 class="shout">
+            <img src="pictures/logo.svg" alt="Shower logo">
+            <a href="https://github.com/shower/shower">See more on GitHub</a>
+        </h2>
+        <style>
+            #see-more h2 {
+                font-size: 100px
+            }
+
+            #see-more img {
+                width: 0.72em;
+                height: 0.72em;
+            }
+        </style>
+    </section> -->
+
+    <footer class="badge">
+        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
+    </footer>
+
+    <div class="progress"></div>
+
+    <script src="highlight/index.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="showerJS/shower.min.js"></script>
+    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+
+</body>
+
+</html>
