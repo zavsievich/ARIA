@@ -34,9 +34,9 @@
         </h2>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <h2 class="shout">22 АПРЕЛЯ <br> <span style="color: red;">Галерея У</span></h2>
-    </section>
+    </section> -->
 
     <section class="slide" style="letter-spacing: 0.05em;">
         <h2 class="shout ttu">Accessibility</h2>
@@ -321,7 +321,38 @@
     </section>
 
     <section class="slide">
+        <h2>Для кнопок</h2>
+        <pre>
+            <code>
+id="btn-id"
+aria-controls="item-id"
+aria-expanded="true/false"
+aria-disabled="true/false"
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2>Для секций</h2>
+        <pre>
+            <code>
+id="sect-id"
+aria-labelledby="btn-id"
+role="region"
+            </code>
+        </pre>
+    </section>
+
+    <section class="slide">
         <iframe src="http://127.0.0.1:5500/accordion/aria.html" frameborder="0"></iframe>
+    </section>
+
+    <section class="slide">
+        <iframe src="http://127.0.0.1:5500/tabs/non-aria.html" frameborder="0"></iframe>
+    </section>
+
+    <section class="slide">
+        <iframe src="http://127.0.0.1:5500/tabs/aria.html" frameborder="0"></iframe>
     </section>
 
     <section class="slide">

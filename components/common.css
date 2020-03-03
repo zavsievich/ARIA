@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+:root {
+    --c-accent: #3f3f3f;
+    --c-brand: tomato;
+    --c-back: ivory;
+}
+
 html {
     font-size: 100%;
 }
