@@ -16,6 +16,11 @@ img {
     padding-bottom: 75px;
 }
 
+.slide--flex {
+    display: flex;
+    justify-content: space-between;
+}
+
 .centered {
     display: flex;
     flex-direction: column;
