@@ -133,6 +133,29 @@ pre {
   text-align: center;
 }
 
+.checkbox {
+    position: relative;
+    display: block;
+    background: transparent;
+    width: 4rem;
+    height: 4rem;
+    border: 0.6rem solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.checkbox.check::after {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: black;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+    top: 50%;
+}
 
 
 
