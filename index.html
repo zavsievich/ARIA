@@ -643,6 +643,130 @@
         <img src="pictures/aria.png" alt="" class="cover">
     </section>
 
+    <sections class="slide">
+        <h2 class="shout">❗️ВНИМАНИЕ❗️</h2>
+    </sections>
+
+    <section class="slide">
+        <h2 class="shout">ARIA !== Semantics</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Не делайте так</h2>
+        <pre>
+<code>&lt;header role="header"&gt;&lt;/div&gt;
+&lt;div role="button"&gt;&lt;/div&gt;
+&lt;nav role="banner"&gt;&lt;/div&gt;
+&lt;header role="contentinfo"&gt;&lt;/div&gt;</code>
+        </pre>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout">Что умеет ARIA?</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Менять (добавлять) роли</h2>
+        <pre>
+<code>&lt;header role="button"&gt;
+    Button or header?
+&lt;/header&gt;</code>
+        </pre>
+        <header role="button">Button or header?</header>
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/header-btn.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Менять (добавлять) состояния</h2>
+        <pre>
+<code>&lt;button role="button"
+aria-disabled="true"&gt;
+    Disabled or not?
+&lt;/button&gt;</code>
+</code>
+        </pre>
+        <!-- <button aria-disabled="true">Disabled or not?</button> -->
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/is-disabled.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Checked or not?</h2>
+        <pre>
+<code>&lt;input
+ type="checkbox"
+ aria-checked="false"
+ checked&gt;
+</code>
+        </pre>
+        <!-- <input type="checkbox" checked aria-checked="false"> -->
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/is-checked.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Менять (добавлять) описание</h2>
+        <pre>
+<code>&lt;button aria-label="Click me"&gt;
+&lt;/button&gt;</code>
+</code>
+        </pre>
+        <!-- <button aria-label="Click me"></button> -->
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/is-full.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Показывать отношения между элементами</h2>
+        <pre>
+<code>&lt;section aria-labelledby="heading"&gt;
+    &lt;h2 id="heading"&gt;
+        Описывает секцию
+    &lt;/h2&gt;
+&lt;/section&gt;</code>
+</code>
+        </pre>
+        <!-- <section aria-labelledby="heading" style="opacity: 0;">
+            <h2 id="heading">Описывает секцию</h2>
+        </section> -->
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/is-describe.png" alt="">
+    </section>
+
+    <section class="slide">
+        <h2>Показывать отношения между элементами</h2>
+        <pre>
+<code>&lt;button aria-controls="section"&gt;
+    Контролирует секцию
+&lt;/button&gt;
+&lt;section id="section"
+aria-expanded="true"&gt;
+    Контролируется кнопкой
+&lt;/section&gt;
+</code>
+</code>
+        </pre>
+        <!-- <button aria-controls="section"  style="opacity: 0;">Контролирует секцию</button>
+        <section id="section" aria-expanded="true" style="opacity: 0;">
+            Контролируется кнопкой
+        </section> -->
+    </section>
+
+    <section class="slide centered">
+        <img src="pictures/is-controls.png" alt="">
+    </section>
+
     <section class="slide centered">
         <div class="checkbox"></div>
     </section>
@@ -745,12 +869,36 @@
         <img src="pictures/cbox-checked.png" alt="" class="cover">
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <iframe src="components/accordion/aria.html" frameborder="0"></iframe>
-    </section>
+    </section> -->
 
     <section class="slide">
         <iframe src="components/tabs/aria.html" frameborder="0"></iframe>
+    </section>
+
+    <section class="slide slide--flex">
+        <div>
+            <h2>Для табов</h2>
+            <pre>
+                <code>
+id="tab-id"
+aria-controls="item-id"
+role="tab"
+aria-selected="true/false"
+                </code>
+            </pre>
+        </div>
+        <div>
+            <h2>Для панелей</h2>
+            <pre>
+                <code>
+aria-labelledby="btn-id"
+id="item-id"
+role="tabpanel"
+                </code>
+            </pre>
+        </div>
     </section>
 
     <!-- <section class="slide">
