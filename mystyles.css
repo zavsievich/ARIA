@@ -1,8 +1,9 @@
 /* Variables */
-* {
+:root {
     --c-blue: #005faf;
     --c-w3: #0B5C9A;
     --c-orange: #FF7F00;
+    --c-ocean: #092C47;
 }
 
 svg {
@@ -20,8 +21,13 @@ img {
     object-fit: cover;
 }
 
+#me {
+    display: flex;
+    padding: 0;               
+}
+
 .blue-slide {
-    background-color: var(--c-w3);
+    background-color: var(--c-ocean);
     color: white;
 }
 
@@ -89,6 +95,11 @@ img {
 #ic-logo {
     color: var(--c-blue);
     width: 100%;
+}
+
+.wtf {
+    margin: 0 auto;
+    width: 40%;
 }
 
 .crossed {
@@ -173,7 +184,6 @@ pre {
     left: 50%;
     top: 50%;
 }
-
 
 
 
