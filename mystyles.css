@@ -15,6 +15,10 @@ img {
     height: auto;
 }
 
+dt {
+    font-weight: bold;
+}
+
 .fit {
     width: 100%;
     height: 100%;
@@ -26,12 +30,21 @@ img {
     padding: 0;               
 }
 
-.blue-slide {
+.accent-slide {
     background-color: var(--c-ocean);
     color: white;
 }
 
-.blue-slide h2 {
+.accent-slide h2 {
+    color: var(--c-orange);
+}
+
+.dark-mode .slide {
+    background-color: var(--c-ocean);
+    color: white;
+}
+
+.dark-mode h2 {
     color: var(--c-orange);
 }
 
