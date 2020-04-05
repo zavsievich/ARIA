@@ -1,4 +1,5 @@
 /* Variables */
+
 :root {
     --c-blue: #005faf;
     --c-w3: #0B5C9A;
@@ -27,7 +28,7 @@ dt {
 
 #me {
     display: flex;
-    padding: 0;               
+    padding: 0;
 }
 
 .accent-slide {
@@ -73,6 +74,23 @@ dt {
     text-transform: uppercase;
 }
 
+.dis-slide li, .dis-slide dt {
+    display: flex;
+    align-items: center;
+}
+
+ul {
+    color: var(--c-ocean);
+}
+
+.dis-slide svg {
+    height: 36px;
+    width: 36px;
+    display: block;
+    margin-left: 15px;
+    color: var(--c-orange);
+}
+
 .red {
     color: red;
 }
@@ -88,9 +106,8 @@ dt {
     transform: translateY(-50%);
 }
 
-.shout,
-.shout--mini {
-  font-size: 115px !important;
+.shout, .shout--mini {
+    font-size: 115px !important;
 }
 
 .full {
@@ -130,7 +147,7 @@ dt {
 }
 
 .bold {
-  font-weight: bold;
+    font-weight: bold;
 }
 
 .clearfix::after {
@@ -149,29 +166,29 @@ pre {
 }
 
 .flex-code {
-  display: flex !important;
+    display: flex !important;
 }
 
 .flex-col {
-  flex: 0 0 40%
+    flex: 0 0 40%
 }
 
 .slide::after {
-  position: absolute;
-  top: 0;
-  left: 875px;
-  box-sizing: border-box;
-  padding-top: 15px;
-  width: var(--ribbon-size);
-  height: calc(var(--ribbon-size) * 1.7);
-  /* background-image: url(ribbon.svg); */
-  background: var(--color-grey) !important;
-  background-size: cover;
-  color: #ffffff;
-  font-weight: 600;
-  counter-increment: slide;
-  content: counter(slide);
-  text-align: center;
+    position: absolute;
+    top: 0;
+    left: 875px;
+    box-sizing: border-box;
+    padding-top: 15px;
+    width: var(--ribbon-size);
+    height: calc(var(--ribbon-size) * 1.7);
+    /* background-image: url(ribbon.svg); */
+    background: var(--color-grey) !important;
+    background-size: cover;
+    color: #ffffff;
+    font-weight: 600;
+    counter-increment: slide;
+    content: counter(slide);
+    text-align: center;
 }
 
 .checkbox {
@@ -198,16 +215,8 @@ pre {
     top: 50%;
 }
 
-
-
-
-
-
-
-
-
-
 /* HIGHLIGHT */
+
 /**
  * GitHub Gist Theme
  * Author : Louis Barranqueiro - https://github.com/LouisBarranqueiro
@@ -221,35 +230,23 @@ pre {
     overflow-x: auto;
 }
 
-.hljs-comment,
-.hljs-meta {
+.hljs-comment, .hljs-meta {
     color: #969896;
 }
 
-.hljs-string,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-strong,
-.hljs-emphasis,
-.hljs-quote {
+.hljs-string, .hljs-variable, .hljs-template-variable, .hljs-strong, .hljs-emphasis, .hljs-quote {
     color: #df5000;
 }
 
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-type {
+.hljs-keyword, .hljs-selector-tag, .hljs-type {
     color: #a71d5d;
 }
 
-.hljs-literal,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-attribute {
+.hljs-literal, .hljs-symbol, .hljs-bullet, .hljs-attribute {
     color: #0086b3;
 }
 
-.hljs-section,
-.hljs-name {
+.hljs-section, .hljs-name {
     color: #63a35c;
 }
 
@@ -257,12 +254,7 @@ pre {
     color: #333333;
 }
 
-.hljs-title,
-.hljs-attr,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-selector-attr,
-.hljs-selector-pseudo {
+.hljs-title, .hljs-attr, .hljs-selector-id, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo {
     color: #795da3;
 }
 
