@@ -215,7 +215,7 @@ pre {
     background: transparent;
     width: 4rem;
     height: 4rem;
-    border: 0.3rem solid var(--c-ocean);
+    border: 0.5rem solid var(--c-ocean);
     border-radius: 10px;
     cursor: pointer;
 }
