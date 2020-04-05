@@ -140,6 +140,11 @@ ul {
     height: 100%;
 }
 
+.vadim {
+    position: absolute;
+    z-index: -1;
+}
+
 #ic-logo {
     color: var(--c-blue);
     width: 100%;
