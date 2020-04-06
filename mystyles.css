@@ -28,6 +28,11 @@ dt {
     object-fit: cover;
 }
 
+.pic-centered {
+    display: block;
+    margin: 0 auto;
+}
+
 #me {
     display: flex;
     padding: 0;
@@ -90,7 +95,8 @@ dt {
 
 .dom-img {
     width: 70%;
-    border: 3px solid var(--c-orange);
+    /* border: 3px solid var(--c-orange); */
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.83);
     border-radius: 10px;
     object-fit: cover;
     object-position: left;
