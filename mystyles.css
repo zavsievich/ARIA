@@ -231,6 +231,11 @@ pre {
     cursor: pointer;
 }
 
+.checkbox:focus {
+    outline: 4px solid rgba(0,125,250,0.6);
+    outline-offset: 3px;
+}
+
 .checkbox.check {
     background-color: var(--c-orange);
 }

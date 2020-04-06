@@ -173,11 +173,21 @@
     <section class="slide">
         <h2 class="">Процент людей с дизабилитиз</h2>
         <img src="pictures/dis-stat.svg" class="pic-centered" alt="" style="max-height: 90%;">
+        <p class="copyright">
+            <a href="https://www.who.int/ru/news-room/fact-sheets/detail/disability-and-health">
+                Инвалидность и здоровье
+            </a>
+        </p>
     </section>
 
     <section class="slide">
         <h2 class="">Нуждаются в ассистивных технологиях</h2>
         <img src="pictures/dis-stat-2.svg" class="pic-centered" alt="" style="max-height: 90%;">
+        <p class="copyright">
+            <a href="https://www.who.int/ru/news-room/fact-sheets/detail/disability-and-health">
+                Инвалидность и здоровье
+            </a>
+        </p>
     </section>
 
     <!-- <section class="slide centered">
@@ -744,6 +754,10 @@
         <img src="pictures/a11y-support-chrome.png" class="dom-img">
     </section>
 
+    <section class="slide">
+        <h2 class="shout">Из чего состоит ARIA?</h2>
+    </section>
+
     <section class="slide centered">
         <dl>
             <dt>Роль</dt>
@@ -760,26 +774,36 @@
     <section class="slide">
         <h2>Роли</h2>
         <ul>
-            <li>banner</li>
-            <li>navigation</li>
-            <li>main</li>
-            <li>button</li>
-            <li>heading</li>
-            <li>contentinfo</li>
+            <li>banner <span class="next">(&lt;header&gt;)</span></li>
+            <li>navigation <span class="next">(&lt;nav&gt;)</span></li>
+            <li>main <span class="next">(&lt;main&gt;)</span></li>
+            <li>button <span class="next">(&lt;button&gt;)</span></li>
+            <li>heading <span class="next">(&lt;h*&gt;)</span></li>
+            <li>contentinfo <span class="next">(&lt;footer&gt;)</span></li>
         </ul>
     </section>
 
     <section class="slide centered-v">
         <dl>
             <dt>Имя</dt>
-            <dd>Название (описание) элемента</dd>
+            <dd>
+                Название (описание) элемента <br>
+                <pre>
+                    <code>&lt;button&gt;I'am button&lt;/button&gt;</code>
+                </pre>
+            </dd>
         </dl>
     </section>
 
     <section class="slide centered-v">
         <dl>
             <dt>Состояние</dt>
-            <dd>это временная характеристика поведения элемента (в фокусе/вне фокуса)</dd>
+            <dd>
+                это временная характеристика поведения элемента (в фокусе/вне фокуса)
+                <pre>
+                    <code>&lt;input type="checkbox" checked&gt;</code>
+                </pre>
+            </dd>
         </dl>
         <p class="copyright">
             <a
@@ -849,12 +873,14 @@
 
     <section class="slide">
         <h2>Менять (добавлять) роли</h2>
+        <header role="button">Хедер или кнопка?</header>
+        <div class="code-example">
         <pre>
 <code>&lt;header role="button"&gt;
     Хедер или кнопка?
 &lt;/header&gt;</code>
         </pre>
-        <!-- <header role="button">Хедер или кнопка?</header> -->
+        </div>
     </section>
 
     <section class="slide centered">
@@ -863,13 +889,14 @@
 
     <section class="slide">
         <h2>Менять (добавлять) состояния</h2>
+        <button aria-disabled="true">Кликабельна или нет?</button>
+        <div class="code-example">
         <pre>
 <code>&lt;button aria-disabled="true"&gt;
     Кликабельна или нет?
 &lt;/button&gt;</code>
-</code>
         </pre>
-        <button aria-disabled="true" style="opacity: 0;">Кликабельна или нет?</button>
+    </div>
     </section>
 
     <section class="slide centered">
@@ -878,14 +905,16 @@
 
     <section class="slide">
         <h2>Чекнут или нет?</h2>
+        <input type="checkbox" checked aria-checked="false" style="height: 30px; width: 30px;"> 
+        <div class="code-example">
         <pre>
-<code>&lt;input
- type="checkbox"
- aria-checked="false"
- checked&gt;
+<code>&lt;input type="checkbox"
+       aria-checked="false"
+       checked
+&gt;
 </code>
         </pre>
-        <!-- <input type="checkbox" checked aria-checked="false"> -->
+    </div>
     </section>
 
     <section class="slide centered">
@@ -894,12 +923,15 @@
 
     <section class="slide">
         <h2>Менять (добавлять) описание</h2>
+        <button aria-label="Закрыть меню" style="width: 30px; height: 30px; padding: 0; font-size: 1.2rem;">x</button>
+        <div class="code-example">
         <pre>
-<code>&lt;button aria-label="Добавить в корзину"&gt;
+<code>&lt;button aria-label="Закрыть меню"&gt;
+    x
 &lt;/button&gt;</code>
 </code>
         </pre>
-        <!-- <button aria-label="Добавить в корзину"></button> -->
+    </div>
     </section>
 
     <section class="slide centered">
@@ -908,17 +940,18 @@
 
     <section class="slide">
         <h2>Показывать отношения между элементами</h2>
+            <section aria-labelledby="heading">
+                <h3 id="heading">Описывает секцию</h3>
+            </section>
+            <div class="code-example">
         <pre>
 <code>&lt;section aria-labelledby="heading"&gt;
-    &lt;h2 id="heading"&gt;
+    &lt;h3 id="heading"&gt;
         Описывает секцию
-    &lt;/h2&gt;
+    &lt;/h3&gt;
 &lt;/section&gt;</code>
-</code>
         </pre>
-        <!-- <section aria-labelledby="heading" style="opacity: 0;">
-            <h2 id="heading">Описывает секцию</h2>
-        </section> -->
+    </div>
     </section>
 
     <section class="slide centered">
@@ -927,6 +960,11 @@
 
     <section class="slide">
         <h2>Показывать отношения между элементами</h2>
+        <button aria-controls="section">Контролирует секцию</button>
+        <section id="section" aria-expanded="true">
+            Контролируется кнопкой
+        </section> 
+        <div class="code-example" style="font-size: 1rem;">
         <pre>
 <code>&lt;button aria-controls="section"&gt;
     Контролирует секцию
@@ -936,12 +974,8 @@ aria-expanded="true"&gt;
     Контролируется кнопкой
 &lt;/section&gt;
 </code>
-</code>
         </pre>
-        <!-- <button aria-controls="section"  style="opacity: 0;">Контролирует секцию</button>
-        <section id="section" aria-expanded="true" style="opacity: 0;">
-            Контролируется кнопкой
-        </section> -->
+    </div>
     </section>
 
     <section class="slide centered">
@@ -1066,23 +1100,23 @@ aria-expanded="true"&gt;
         <div>
             <h2>Для табов</h2>
             <pre>
-                <code>
+<code style="font-size: 20px;">role="tab"
 id="tab-id"
 aria-controls="item-id"
-role="tab"
-aria-selected="true/false"
-                </code>
+aria-selected="true/false"</code>
             </pre>
+            <img src="pictures/tabs-screen.png" alt="" style="max-width: 80%;">
         </div>
         <div>
             <h2>Для панелей</h2>
-            <pre>
-                <code>
-aria-labelledby="btn-id"
+            <pre>         
+<code style="font-size: 20px;">role="tabpanel"
 id="item-id"
-role="tabpanel"
-                </code>
+aria-labelledby="btn-id"
+
+</code>
             </pre>
+            <img src="pictures/content-screen.png" alt="" style="max-width: 80%;">
         </div>
     </section>
 
