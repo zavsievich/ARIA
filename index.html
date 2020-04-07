@@ -170,8 +170,8 @@
         </svg>
     </section> -->
 
-    <section class="slide">
-        <h2 class="">Процент людей с дизабилитиз</h2>
+    <section class="slide" style="padding-left: 95px;">
+        <h2 class="">Население с ограниченными возможностями</h2>
         <img src="pictures/dis-stat.svg" class="pic-centered" alt="" style="max-height: 90%;">
         <p class="copyright">
             <a href="https://www.who.int/ru/news-room/fact-sheets/detail/disability-and-health">
@@ -680,6 +680,63 @@
         </p>
     </section>
 
+    <section class="slide centered-v">
+        <dl>
+            <dt>Вспомогательные технологии</dt>
+            <dd>
+                общее название технических средств для облегчения повседневной жизни людей с инвалидностью. 
+            </dd>
+        </dl>
+        <p class="copyright">
+            <a href="http://specialbank.ru/guide/dev_web.html">
+                Web-разработка.Вспомогательные технологии
+            </a>
+        </p>
+    </section>
+
+    <section class="slide centered-v">
+        <dl>
+            <dt>Cкринридер</dt>
+            <dd>
+                программа для чтения с экрана компьютера или смартфона, предназначенная для незрячих и людей с ослабленным зрением. Скринридер озвучивает текст, элементы интерфейса, а также обеспечивает звуковой и виброотклик. 
+            </dd>
+        </dl>
+        <p class="copyright">
+            <a href="http://specialbank.ru/guide/dev_web.html">
+                Web-разработка.Вспомогательные технологии
+            </a>
+        </p>
+    </section>
+
+    <section class="slide dis-slide">
+        <h2>Самые популярные скринридеры</h2>
+        <ul>
+            <li>VoiceOver (macOS, iOS) <img src="pictures/voiceover_logo.png" alt=""></li>
+            <li class="next">TalkBack (Android) <img src="pictures/talkback.png" alt=""></li>
+            <li class="next">NVDA (Windows) <img src="pictures/nvda.png" alt=""></li>
+            <li class="next">JAWS (Windows) <img src="pictures/jaws-logo.png" alt=""></li>
+        </ul>
+        <p class="copyright">
+            <a href="http://specialbank.ru/guide/dev_web.html">
+                Web-разработка.Вспомогательные технологии
+            </a>
+        </p>
+    </section>
+
+    <section class="slide centered-v">
+        <dl>
+            <dt>Ротор</dt>
+            <dd>
+                функция выбора элементов, по которым пользователь перемещается по странице и управляет ей: основных частей сайта, заголовков, ссылок
+            </dd>
+        </dl>
+        <p class="copyright">
+            <a href="http://specialbank.ru/guide/dev_web.html">
+                Web-разработка.Вспомогательные технологии
+            </a>
+        </p>
+    </section>
+
     <section class="slide centered">
         <img src="pictures/landmarks-all.png" alt="" class="" style="width: 60%;">
     </section>
@@ -774,13 +831,13 @@
     <section class="slide">
         <h2>Роли</h2>
         <ul>
-            <li>banner <span class="next">(&lt;header&gt;)</span></li>
-            <li>navigation <span class="next">(&lt;nav&gt;)</span></li>
-            <li>main <span class="next">(&lt;main&gt;)</span></li>
-            <li>button <span class="next">(&lt;button&gt;)</span></li>
-            <li>heading <span class="next">(&lt;h*&gt;)</span></li>
-            <li>contentinfo <span class="next">(&lt;footer&gt;)</span></li>
-        </ul>
+            <li>banner <code class="xml next">&lt;header&gt;</code></li>
+            <li>navigation <code class="xml next">&lt;nav&gt;</code></li>
+             <li>main <code class="xml next">&lt;main&gt;</code></li>
+             <li>button <code class="xml next">&lt;button&gt;</code></li>
+             <li>heading <code class="xml next">&lt;h*&gt;</code></li>
+             <li>scontentinfo <code class="xml next">&lt;footer&gt;</code></li>
+         </ul>
     </section>
 
     <section class="slide centered-v">
@@ -908,7 +965,7 @@
         <input type="checkbox" checked aria-checked="false" style="height: 30px; width: 30px;"> 
         <div class="code-example">
         <pre>
-<code>&lt;input type="checkbox"
+<code class="xml">&lt;input type="checkbox"
        aria-checked="false"
        checked
 &gt;
@@ -988,7 +1045,7 @@ aria-expanded="true"&gt;
 
     <section class="slide centered">
         <pre style="font-size: 3rem;">
-            <code>
+            <code class="xml">
 &lt;div class="checkbox"&gt;&lt;/div&gt;
             </code>
         </pre>
@@ -1000,7 +1057,7 @@ aria-expanded="true"&gt;
 
     <section class="slide centered">
         <pre style="font-size: 3rem;">
-            <code>
+            <code class="xml">
 &lt;div
   class="checkbox"
   <mark>role="checkbox"</mark>&gt;
@@ -1019,7 +1076,7 @@ aria-expanded="true"&gt;
 
     <section class="slide centered">
         <pre style="font-size: 3rem;">
-            <code>
+            <code class="xml">
 &lt;div
   class="checkbox"
   role="checkbox"
@@ -1039,19 +1096,19 @@ aria-expanded="true"&gt;
 
     <section class="slide centered">
         <pre style="font-size: 2rem;">
-            <code>
+            <code class="xml">
 &lt;div
   class="checkbox"
   role="checkbox"
   tabindex="0"
-  <mark>aria-label="buy me"</mark>&gt;
+  <mark>aria-label="Включить уведомления"</mark>&gt;
 &lt;/div&gt;
             </code>
         </pre>
     </section>
 
     <section class="slide centered">
-        <div class="checkbox" role="checkbox" tabindex="0" aria-label="buy me"></div>
+        <div class="checkbox" role="checkbox" tabindex="0" aria-label="Включить уведомления"></div>
     </section>
 
     <section class="slide">
@@ -1060,12 +1117,12 @@ aria-expanded="true"&gt;
 
     <section class="slide centered">
         <pre style="font-size: 2rem;">
-            <code>
+            <code class="xml">
 &lt;div
   class="checkbox"
   role="checkbox"
   tabindex="0"
-  aria-label="buy me"
+  aria-label="Включить уведомления"
   <mark>aria-checked="false"</mark>&gt;
 &lt;/div&gt;
             </code>
@@ -1073,7 +1130,7 @@ aria-expanded="true"&gt;
     </section>
 
     <section class="slide centered">
-        <div class="checkbox" role="checkbox" tabindex="0" aria-label="buy me" aria-checked="false"></div>
+        <div class="checkbox" role="checkbox" tabindex="0" aria-label="Включить уведомления" aria-checked="false"></div>
     </section>
 
     <section class="slide">
